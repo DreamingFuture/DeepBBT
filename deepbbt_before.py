@@ -24,11 +24,11 @@ from transformers import (
     GPT2Tokenizer,
 )
 from models.deep_modeling_roberta import RobertaForMaskedLM
-# from models.deep_modeling_bart import BartForConditionalGeneration
-# from models.deep_modeling_t5 import T5ForConditionalGeneration
-# from models.deep_modeling_gpt2 import GPT2LMHeadModel
-# from models.deep_modeling_bert import BertForMaskedLM
-# from models.deep_modeling_cpt import CPTForMaskedLM
+from models.deep_modeling_bart import BartForConditionalGeneration
+from models.deep_modeling_t5 import T5ForConditionalGeneration
+from models.deep_modeling_gpt2 import GPT2LMHeadModel
+from models.deep_modeling_bert import BertForMaskedLM
+from models.deep_modeling_cpt import CPTForMaskedLM
 from utils import hinge_loss
 from sklearn.metrics import f1_score
 
@@ -75,22 +75,22 @@ parser.add_argument(
 args = parser.parse_args()
 
 # below are free hyper-params
-# model_name = args.model_name
-# if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
-#     from dataloader_t5 import SST2Loader, AGNewsLoader, YelpPLoader, DBPediaLoader, RTELoader, MRPCLoader, SNLILoader
-#     from metrics_t5 import SST2Metric, AGNewsMetric, YelpPMetric, DBPediaMetric, RTEMetric, MRPCMetric, SNLIMetric
-# elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
-#     from dataloader_gpt import SST2Loader, AGNewsLoader, YelpPLoader, DBPediaLoader, RTELoader, MRPCLoader, SNLILoader
-#     from metrics_gpt import SST2Metric, AGNewsMetric, YelpPMetric, DBPediaMetric, RTEMetric, MRPCMetric, SNLIMetric
-# elif model_name in ['fnlp/cpt-large']:
-#     from dataloader_cpt import ChnSentLoader, AmazonLoader, THUCNewsLoader, BQLoader, CMNLILoader, CCPMLoader, \
-#         TNewsLoader, \
-#         OCNLILoader, LCQMCLoader, C3Loader
-#     from metrics_cpt import ChnSentMetric, AmazonMetric, THUCNewsMetric, BQMetric, CMNLIMetric, CCPMMetric, TNewsMetric, \
-#         OCNLIMetric, LCQMCMetric, C3Metric
-# else:
-from dataloader import SST2Loader, AGNewsLoader, YelpPLoader, MRPCLoader, SNLILoader, TRECLoader
-from metrics import SST2Metric, AGNewsMetric, YelpPMetric, MRPCMetric, SNLIMetric, TRECMetric
+model_name = args.model_name
+if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
+    from dataloader_t5 import SST2Loader, AGNewsLoader, YelpPLoader, DBPediaLoader, RTELoader, MRPCLoader, SNLILoader
+    from metrics_t5 import SST2Metric, AGNewsMetric, YelpPMetric, DBPediaMetric, RTEMetric, MRPCMetric, SNLIMetric
+elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
+    from dataloader_gpt import SST2Loader, AGNewsLoader, YelpPLoader, DBPediaLoader, RTELoader, MRPCLoader, SNLILoader
+    from metrics_gpt import SST2Metric, AGNewsMetric, YelpPMetric, DBPediaMetric, RTEMetric, MRPCMetric, SNLIMetric
+elif model_name in ['fnlp/cpt-large']:
+    from dataloader_cpt import ChnSentLoader, AmazonLoader, THUCNewsLoader, BQLoader, CMNLILoader, CCPMLoader, \
+        TNewsLoader, \
+        OCNLILoader, LCQMCLoader, C3Loader
+    from metrics_cpt import ChnSentMetric, AmazonMetric, THUCNewsMetric, BQMetric, CMNLIMetric, CCPMMetric, TNewsMetric, \
+        OCNLIMetric, LCQMCMetric, C3Metric
+else:
+    from dataloader import SST2Loader, AGNewsLoader, YelpPLoader, DBPediaLoader, RTELoader, MRPCLoader, SNLILoader
+    from metrics import SST2Metric, AGNewsMetric, YelpPMetric, DBPediaMetric, RTEMetric, MRPCMetric, SNLIMetric
 
 task_name = args.task_name
 n_prompt_tokens = args.n_prompt_tokens
@@ -190,46 +190,46 @@ class LMForwardAPI:
                 onnx_model_path=onnx_model_path,
             )
             self.model.lm_head.bias = torch.nn.parameter.Parameter(torch.zeros(self.config.vocab_size))
-        # elif model_name in ['bert-base-uncased', 'bert-large-uncased']:
-        #     self.config = BertConfig.from_pretrained(model_name)
-        #     self.tokenizer = BertTokenizer.from_pretrained(model_name)
-        #     self.model = BertForMaskedLM.from_pretrained(
-        #         model_name,
-        #         config=self.config,
-        #         n_prompt_tokens=n_prompt_tokens,
-        #     )
-        # elif model_name in ['facebook/bart-base', 'facebook/bart-large']:
-        #     self.config = BartConfig.from_pretrained(model_name)
-        #     self.tokenizer = BartTokenizer.from_pretrained(model_name)
-        #     self.model = BartForConditionalGeneration.from_pretrained(
-        #         model_name,
-        #         config=self.config,
-        #         n_prompt_tokens=n_prompt_tokens,
-        #     )
-        # elif model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
-        #     self.config = T5Config.from_pretrained(model_name)
-        #     self.tokenizer = T5Tokenizer.from_pretrained(model_name)
-        #     self.model = T5ForConditionalGeneration.from_pretrained(
-        #         model_name,
-        #         config=self.config,
-        #         n_prompt_tokens=n_prompt_tokens,
-        #     )
-        # elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
-        #     self.config = GPT2Config.from_pretrained(model_name)
-        #     self.tokenizer = GPT2Tokenizer.from_pretrained(model_name)
-        #     self.model = GPT2LMHeadModel.from_pretrained(
-        #         model_name,
-        #         config=self.config,
-        #         n_prompt_tokens=n_prompt_tokens,
-        #     )
-        # elif model_name in ['fnlp/cpt-large']:
-        #     self.config = BartConfig.from_pretrained(model_name)
-        #     self.tokenizer = BertTokenizer.from_pretrained(model_name)
-        #     self.model = CPTForMaskedLM.from_pretrained(
-        #         model_name,
-        #         config=self.config,
-        #         n_prompt_tokens=n_prompt_tokens,
-        #     )
+        elif model_name in ['bert-base-uncased', 'bert-large-uncased']:
+            self.config = BertConfig.from_pretrained(model_name)
+            self.tokenizer = BertTokenizer.from_pretrained(model_name)
+            self.model = BertForMaskedLM.from_pretrained(
+                model_name,
+                config=self.config,
+                n_prompt_tokens=n_prompt_tokens,
+            )
+        elif model_name in ['facebook/bart-base', 'facebook/bart-large']:
+            self.config = BartConfig.from_pretrained(model_name)
+            self.tokenizer = BartTokenizer.from_pretrained(model_name)
+            self.model = BartForConditionalGeneration.from_pretrained(
+                model_name,
+                config=self.config,
+                n_prompt_tokens=n_prompt_tokens,
+            )
+        elif model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
+            self.config = T5Config.from_pretrained(model_name)
+            self.tokenizer = T5Tokenizer.from_pretrained(model_name)
+            self.model = T5ForConditionalGeneration.from_pretrained(
+                model_name,
+                config=self.config,
+                n_prompt_tokens=n_prompt_tokens,
+            )
+        elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
+            self.config = GPT2Config.from_pretrained(model_name)
+            self.tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+            self.model = GPT2LMHeadModel.from_pretrained(
+                model_name,
+                config=self.config,
+                n_prompt_tokens=n_prompt_tokens,
+            )
+        elif model_name in ['fnlp/cpt-large']:
+            self.config = BartConfig.from_pretrained(model_name)
+            self.tokenizer = BertTokenizer.from_pretrained(model_name)
+            self.model = CPTForMaskedLM.from_pretrained(
+                model_name,
+                config=self.config,
+                n_prompt_tokens=n_prompt_tokens,
+            )
         else:
             raise NotImplementedError
 
@@ -292,14 +292,14 @@ class LMForwardAPI:
             self.metric = YelpPMetric(target='labels', pred='logits', tokenizer=tokenizer)
             self.metric_key = 'acc'
             self.metric_name = 'YelpPMetric'
-        # elif task_name == 'dbpedia':
-        #     self.metric = DBPediaMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'DBPediaMetric'
-        # elif task_name == 'rte':
-        #     self.metric = RTEMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'RTEMetric'
+        elif task_name == 'dbpedia':
+            self.metric = DBPediaMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'DBPediaMetric'
+        elif task_name == 'rte':
+            self.metric = RTEMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'RTEMetric'
         elif task_name == 'mrpc':
             self.metric = MRPCMetric(target='labels', pred='logits', tokenizer=tokenizer)
             self.metric_key = 'f1'
@@ -308,46 +308,46 @@ class LMForwardAPI:
             self.metric = SNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
             self.metric_key = 'acc'
             self.metric_name = 'SNLIMetric'
-        # elif task_name == 'chnsent':
-        #     self.metric = ChnSentMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'ChnSentMetric'
-        # elif task_name == 'thucnews':
-        #     self.metric = THUCNewsMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'THUCNewsMetric'
-        # elif task_name == 'lcqmc':
-        #     self.metric = LCQMCMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'LCQMCMetric'
-        # elif task_name == 'cmnli':
-        #     self.metric = CMNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'CMNLIMetric'
-        # elif task_name == 'ocnli':
-        #     self.metric = OCNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'OCNLIMetric'
-        # elif task_name == 'amazon':
-        #     self.metric = AmazonMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'AmazonMetric'
-        # elif task_name == 'bq':
-        #     self.metric = BQMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'BQMetric'
-        # elif task_name == 'ccpm':
-        #     self.metric = CCPMMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'CCPMMetric'
-        # elif task_name == 'tnews':
-        #     self.metric = TNewsMetric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'TNewsMetric'
-        # elif task_name == 'c3':
-        #     self.metric = C3Metric(target='labels', pred='logits', tokenizer=tokenizer)
-        #     self.metric_key = 'acc'
-        #     self.metric_name = 'C3Metric'
+        elif task_name == 'chnsent':
+            self.metric = ChnSentMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'ChnSentMetric'
+        elif task_name == 'thucnews':
+            self.metric = THUCNewsMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'THUCNewsMetric'
+        elif task_name == 'lcqmc':
+            self.metric = LCQMCMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'LCQMCMetric'
+        elif task_name == 'cmnli':
+            self.metric = CMNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'CMNLIMetric'
+        elif task_name == 'ocnli':
+            self.metric = OCNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'OCNLIMetric'
+        elif task_name == 'amazon':
+            self.metric = AmazonMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'AmazonMetric'
+        elif task_name == 'bq':
+            self.metric = BQMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'BQMetric'
+        elif task_name == 'ccpm':
+            self.metric = CCPMMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'CCPMMetric'
+        elif task_name == 'tnews':
+            self.metric = TNewsMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'TNewsMetric'
+        elif task_name == 'c3':
+            self.metric = C3Metric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'C3Metric'
         else:
             raise NotImplementedError
         self.margin = self.metric.margin
@@ -404,23 +404,23 @@ class LMForwardAPI:
             for k, v in train_data.items():
                 train_data[k] = v.to(device)
             with torch.no_grad():
-                # if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
-                #     outputs = self.model(
-                #         input_ids=train_data['input_ids'],
-                #         attention_mask=train_data['attention_mask'],
-                #         decoder_input_ids=train_data['decoder_input_ids'],
-                #         decoder_attention_mask=train_data['decoder_attention_mask'],
-                #     )
-                # elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
-                #     outputs = self.model(
-                #         input_ids=train_data['input_ids'],
-                #         attention_mask=train_data['attention_mask'],
-                #     )
-                # else:
-                outputs = self.model(
-                    input_ids=train_data['input_ids'],
-                    attention_mask=train_data['attention_mask'],
-                    mask_pos=train_data['mask_pos'],
+                if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
+                    outputs = self.model(
+                        input_ids=train_data['input_ids'],
+                        attention_mask=train_data['attention_mask'],
+                        decoder_input_ids=train_data['decoder_input_ids'],
+                        decoder_attention_mask=train_data['decoder_attention_mask'],
+                    )
+                elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
+                    outputs = self.model(
+                        input_ids=train_data['input_ids'],
+                        attention_mask=train_data['attention_mask'],
+                    )
+                else:
+                    outputs = self.model(
+                        input_ids=train_data['input_ids'],
+                        attention_mask=train_data['attention_mask'],
+                        mask_pos=train_data['mask_pos'],
                     )
                 logits = outputs['logits']
                 if random_proj == 'normal' and len(self.intermediate_stats) == 1:
@@ -500,24 +500,24 @@ class LMForwardAPI:
                 for k, v in dev_data.items():
                     dev_data[k] = v.to(device)
                 with torch.no_grad():
-                    # if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
-                    #     logits = self.model(
-                    #         input_ids=dev_data['input_ids'],
-                    #         attention_mask=dev_data['attention_mask'],
-                    #         decoder_input_ids=dev_data['decoder_input_ids'],
-                    #         decoder_attention_mask=dev_data['decoder_attention_mask'],
-                    #     )['logits']
-                    # elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
-                    #     logits = self.model(
-                    #         input_ids=dev_data['input_ids'],
-                    #         attention_mask=dev_data['attention_mask'],
-                    #     )['logits']
-                    # else:
-                    logits = self.model(
-                        input_ids=dev_data['input_ids'],
-                        attention_mask=dev_data['attention_mask'],
-                        mask_pos=dev_data['mask_pos'],
-                    )['logits']
+                    if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
+                        logits = self.model(
+                            input_ids=dev_data['input_ids'],
+                            attention_mask=dev_data['attention_mask'],
+                            decoder_input_ids=dev_data['decoder_input_ids'],
+                            decoder_attention_mask=dev_data['decoder_attention_mask'],
+                        )['logits']
+                    elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
+                        logits = self.model(
+                            input_ids=dev_data['input_ids'],
+                            attention_mask=dev_data['attention_mask'],
+                        )['logits']
+                    else:
+                        logits = self.model(
+                            input_ids=dev_data['input_ids'],
+                            attention_mask=dev_data['attention_mask'],
+                            mask_pos=dev_data['mask_pos'],
+                        )['logits']
 
                 dev_loss, dev_perf = self.calc_metric(logits, dev_data['labels'])
                 # fitlog.add_metric(dev_perf, name='dev_acc', step=self.num_call)
@@ -535,7 +535,6 @@ class LMForwardAPI:
                 print('********* Done *********')
             return loss
 
-model_name = args.model_name
 
 if model_name in ['roberta-base', 'roberta-large']:
     tokenizer = RobertaTokenizer.from_pretrained(model_name)
@@ -551,39 +550,41 @@ else:
     raise NotImplementedError
 
 cache_fn = f"caches/data_{model_name.replace('/', '-')}_{task_name}_{n_prompt_tokens}_{seed}.pt"
-DataLoader = {
-    'sst2': SST2Loader,
-    'agnews': AGNewsLoader,
-    'yelpp': YelpPLoader,
-    'mrpc': MRPCLoader,
-    'snli': SNLILoader,
-    'trec': TRECLoader
-}
-# else:
-#     DataLoader = {
-#         'chnsent': ChnSentLoader,
-#         'thucnews': THUCNewsLoader,
-#         'lcqmc': LCQMCLoader,
-#         'cmnli': CMNLILoader,
-#         'ocnli': OCNLILoader,
-#         'amazon': AmazonLoader,
-#         'bq': BQLoader,
-#         'ccpm': CCPMLoader,
-#         'tnews': TNewsLoader,
-#         'c3': C3Loader,
-#     }
+if model_name not in ['fnlp/cpt-large']:
+    DataLoader = {
+        'sst2': SST2Loader,
+        'agnews': AGNewsLoader,
+        'yelpp': YelpPLoader,
+        'dbpedia': DBPediaLoader,
+        'rte': RTELoader,
+        'mrpc': MRPCLoader,
+        'snli': SNLILoader,
+    }
+else:
+    DataLoader = {
+        'chnsent': ChnSentLoader,
+        'thucnews': THUCNewsLoader,
+        'lcqmc': LCQMCLoader,
+        'cmnli': CMNLILoader,
+        'ocnli': OCNLILoader,
+        'amazon': AmazonLoader,
+        'bq': BQLoader,
+        'ccpm': CCPMLoader,
+        'tnews': TNewsLoader,
+        'c3': C3Loader,
+    }
 
 
 @cache_results(cache_fn, _refresh=False)
 def get_data(task_name, tokenizer):
     if task_name in ['agnews', 'yelpp', 'dbpedia', 'snli']:
-        splits = ['train', 'dev']
+        splits = ['train', 'test']
     else:  # for datasets without test set, we use dev set
-        splits = ['train', 'dev']
+        splits = ['train', 'validation']
     if args.cat_or_add == 'cat':
-        data_bundle = DataLoader[task_name](tokenizer=tokenizer, n_prompt_tokens=0).my_load(splits, seed)
+        data_bundle = DataLoader[task_name](tokenizer=tokenizer, n_prompt_tokens=0).my_load(splits)
     else:
-        data_bundle = DataLoader[task_name](tokenizer=tokenizer, n_prompt_tokens=n_prompt_tokens).my_load(splits, seed)
+        data_bundle = DataLoader[task_name](tokenizer=tokenizer, n_prompt_tokens=n_prompt_tokens).my_load(splits)
     return data_bundle
 
 
@@ -627,13 +628,15 @@ def construct_true_few_shot_data(train_data, k_shot):
     return new_train_data, new_dev_data
 
 
-data_bundle = DataLoader[task_name](tokenizer=tokenizer, n_prompt_tokens=n_prompt_tokens).my_load(['train', 'dev'], seed)
+data_bundle = get_data(task_name=task_name, tokenizer=tokenizer)
+if task_name in ['agnews', 'yelpp', 'dbpedia', 'snli']:
+    train_data, test_data = data_bundle.get_dataset('train'), data_bundle.get_dataset('test')
+else:
+    train_data, test_data = data_bundle.get_dataset('train'), data_bundle.get_dataset('validation')
 
-train_data, dev_data = data_bundle.get_dataset('train'), data_bundle.get_dataset('dev')
+train_data, dev_data = construct_true_few_shot_data(train_data, k_shot)
 
-# train_data, dev_data = construct_true_few_shot_data(train_data, k_shot)
-
-for ds in [train_data, dev_data]:
+for ds in [train_data, dev_data, test_data]:
     ds.set_pad_val('input_ids', tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 0)
     ds.set_pad_val('attention_mask', 0)
 
@@ -643,6 +646,9 @@ print(train_data[0])
 print('\n# of dev data: {}'.format(len(dev_data)))
 print('Example:')
 print(dev_data[0])
+print('\n# of test data: {}'.format(len(test_data)))
+print('Example:')
+print(test_data[0])
 
 if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
     train_data = {
@@ -723,12 +729,7 @@ for _ in range(budget // (int(popsize) * model_forward_api.config.num_hidden_lay
 
 end_time = time.time()
 print('Done. Elapsed time: {} (mins)'.format((end_time - start_time) / 60))
-# print('Evaluate on test data...')
-# test_acc = model_forward_api.eval(test_data=test_data)
-# print('Test acc: {}'.format(round(test_acc, 4)))
+print('Evaluate on test data...')
+test_acc = model_forward_api.eval(test_data=test_data)
+print('Test acc: {}'.format(round(test_acc, 4)))
 # fitlog.finish()
-if not os.path.exists(f'./results/{task_name}/{seed}'):
-    os.makedirs(f'./results/{task_name}/{seed}')
-
-
-torch.save(model_forward_api.linear(torch.tensor(model_forward_api.best, dtype=torch.float32)), f=f'./results/{task_name}/{seed}/best.pt')
