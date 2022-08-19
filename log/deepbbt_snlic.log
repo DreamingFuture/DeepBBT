@@ -1,0 +1,3016 @@
+nohup: ignoring input
+nohup: failed to run command './scrip/t6.snli.sh': No such file or directory
+nohup: ignoring input
+===== task: snli start! =====
+===== seed: 8 start! =====
+/data/qingyang/anaconda3/envs/bbt/lib/python3.8/site-packages/cma/s.py:13: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Using custom data configuration default
+Downloading and preparing dataset snli/default to /home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f...
+Generating train_8 split: 0 examples [00:00, ? examples/s]                                                          Generating dev_8 split: 0 examples [00:00, ? examples/s]                                                        Generating train_13 split: 0 examples [00:00, ? examples/s]                                                           Generating dev_13 split: 0 examples [00:00, ? examples/s]                                                         Generating train_42 split: 0 examples [00:00, ? examples/s]                                                           Generating dev_42 split: 0 examples [00:00, ? examples/s]                                                         Generating train_50 split: 0 examples [00:00, ? examples/s]                                                           Generating dev_50 split: 0 examples [00:00, ? examples/s]                                                         Generating train_60 split: 0 examples [00:00, ? examples/s]                                                           Generating dev_60 split: 0 examples [00:00, ? examples/s]                                                         Dataset snli downloaded and prepared to /home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f. Subsequent calls will reuse this data.
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 48.16ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 3010.49ex/s]
+{'text1': 'Girl in plaid shirt riding a unicycle.', 'text2': 'A girl is riding.', 'labels': 0, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . Girl in plaid shirt riding a unicycle. ? <mask> , A girl is riding.", 'target_text': 'Yes'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 26.63ba/s]
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 784.42ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 4915.20ex/s]
+{'text1': 'People using an outdoor ice skating rink.', 'text2': 'The people are on a plane.', 'labels': 2, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . People using an outdoor ice skating rink. ? <mask> , The people are on a plane.", 'target_text': 'No'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 21.27ba/s]
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at roberta-large and are newly initialized: ['lm_head.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+# of train data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 63       | 9904   |
++------------------------+------------------------+----------+--------+
+
+# of dev data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 61       | 3084   |
++------------------------+------------------------+----------+--------+
+[Embedding] mu: -0.018104109913110733 | std: 0.13582643866539001 [RandProj]  mu: 0.0 | std: 0.006074342999950358
+Calculating std for random projections...
+[Layer 1]
+ - Before clipping: mu=-0.0084, std=0.8490, min=-16.1065, max=17.5296
+ - After clipping (round 1): mu=-0.0066, std=0.7086, min=-2.5554, max=2.5386
+ - After clipping (round 2): mu=-0.0060, std=0.7013, min=-2.1324, max=2.1192
+ - After clipping (round 3): mu=-0.0059, std=0.7008, min=-2.1099, max=2.0979
+ - After clipping (round 4): mu=-0.0059, std=0.7008, min=-2.1084, max=2.0965
+ - After clipping (round 5): mu=-0.0059, std=0.7008, min=-2.1083, max=2.0964
+ - Random Projection: mu=0.0000, std=0.0313
+[Layer 2]
+ - Before clipping: mu=-0.0297, std=0.8797, min=-19.9834, max=16.5221
+ - After clipping (round 1): mu=-0.0194, std=0.6817, min=-2.6689, max=2.6095
+ - After clipping (round 2): mu=-0.0188, std=0.6699, min=-2.0645, max=2.0258
+ - After clipping (round 3): mu=-0.0188, std=0.6689, min=-2.0284, max=1.9908
+ - After clipping (round 4): mu=-0.0188, std=0.6689, min=-2.0256, max=1.9881
+ - After clipping (round 5): mu=-0.0188, std=0.6689, min=-2.0254, max=1.9878
+ - Random Projection: mu=0.0000, std=0.0299
+[Layer 3]
+ - Before clipping: mu=-0.0320, std=0.9154, min=-21.1410, max=14.7507
+ - After clipping (round 1): mu=-0.0187, std=0.6760, min=-2.7782, max=2.7141
+ - After clipping (round 2): mu=-0.0183, std=0.6619, min=-2.0466, max=2.0093
+ - After clipping (round 3): mu=-0.0183, std=0.6608, min=-2.0040, max=1.9674
+ - After clipping (round 4): mu=-0.0183, std=0.6607, min=-2.0007, max=1.9642
+ - After clipping (round 5): mu=-0.0183, std=0.6607, min=-2.0005, max=1.9639
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 4]
+ - Before clipping: mu=-0.0354, std=0.9233, min=-25.4630, max=11.0405
+ - After clipping (round 1): mu=-0.0199, std=0.6884, min=-2.8052, max=2.7344
+ - After clipping (round 2): mu=-0.0194, std=0.6756, min=-2.0851, max=2.0453
+ - After clipping (round 3): mu=-0.0194, std=0.6747, min=-2.0463, max=2.0075
+ - After clipping (round 4): mu=-0.0193, std=0.6746, min=-2.0434, max=2.0047
+ - After clipping (round 5): mu=-0.0193, std=0.6746, min=-2.0432, max=2.0045
+ - Random Projection: mu=0.0000, std=0.0302
+[Layer 5]
+ - Before clipping: mu=-0.0390, std=0.9432, min=-26.9795, max=8.5611
+ - After clipping (round 1): mu=-0.0210, std=0.6764, min=-2.8687, max=2.7907
+ - After clipping (round 2): mu=-0.0202, std=0.6619, min=-2.0503, max=2.0083
+ - After clipping (round 3): mu=-0.0201, std=0.6608, min=-2.0059, max=1.9656
+ - After clipping (round 4): mu=-0.0201, std=0.6607, min=-2.0026, max=1.9624
+ - After clipping (round 5): mu=-0.0201, std=0.6607, min=-2.0023, max=1.9621
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 6]
+ - Before clipping: mu=-0.0450, std=0.9610, min=-28.5164, max=7.0249
+ - After clipping (round 1): mu=-0.0258, std=0.6795, min=-2.9280, max=2.8379
+ - After clipping (round 2): mu=-0.0249, std=0.6629, min=-2.0644, max=2.0128
+ - After clipping (round 3): mu=-0.0248, std=0.6614, min=-2.0135, max=1.9637
+ - After clipping (round 4): mu=-0.0248, std=0.6613, min=-2.0091, max=1.9595
+ - After clipping (round 5): mu=-0.0248, std=0.6613, min=-2.0088, max=1.9592
+ - Random Projection: mu=0.0000, std=0.0296
+[Layer 7]
+ - Before clipping: mu=-0.0407, std=0.9765, min=-29.8880, max=6.4587
+ - After clipping (round 1): mu=-0.0199, std=0.6510, min=-2.9703, max=2.8889
+ - After clipping (round 2): mu=-0.0188, std=0.6299, min=-1.9728, max=1.9329
+ - After clipping (round 3): mu=-0.0187, std=0.6279, min=-1.9085, max=1.8709
+ - After clipping (round 4): mu=-0.0187, std=0.6277, min=-1.9024, max=1.8650
+ - After clipping (round 5): mu=-0.0187, std=0.6277, min=-1.9018, max=1.8644
+ - Random Projection: mu=0.0000, std=0.0281
+[Layer 8]
+ - Before clipping: mu=-0.0431, std=0.9942, min=-30.9742, max=6.2774
+ - After clipping (round 1): mu=-0.0214, std=0.6196, min=-3.0257, max=2.9394
+ - After clipping (round 2): mu=-0.0197, std=0.5935, min=-1.8802, max=1.8373
+ - After clipping (round 3): mu=-0.0195, std=0.5907, min=-1.8003, max=1.7610
+ - After clipping (round 4): mu=-0.0195, std=0.5904, min=-1.7915, max=1.7526
+ - After clipping (round 5): mu=-0.0195, std=0.5903, min=-1.7905, max=1.7516
+ - Random Projection: mu=0.0000, std=0.0264
+[Layer 9]
+ - Before clipping: mu=-0.0429, std=0.9880, min=-30.5855, max=6.0390
+ - After clipping (round 1): mu=-0.0213, std=0.5946, min=-3.0069, max=2.9211
+ - After clipping (round 2): mu=-0.0195, std=0.5665, min=-1.8050, max=1.7624
+ - After clipping (round 3): mu=-0.0193, std=0.5632, min=-1.7189, max=1.6799
+ - After clipping (round 4): mu=-0.0192, std=0.5629, min=-1.7090, max=1.6705
+ - After clipping (round 5): mu=-0.0192, std=0.5628, min=-1.7078, max=1.6693
+ - Random Projection: mu=0.0000, std=0.0252
+[Layer 10]
+ - Before clipping: mu=-0.0365, std=0.9940, min=-30.5689, max=6.7265
+ - After clipping (round 1): mu=-0.0144, std=0.5669, min=-3.0183, max=2.9454
+ - After clipping (round 2): mu=-0.0127, std=0.5358, min=-1.7150, max=1.6861
+ - After clipping (round 3): mu=-0.0125, std=0.5321, min=-1.6201, max=1.5946
+ - After clipping (round 4): mu=-0.0125, std=0.5317, min=-1.6089, max=1.5840
+ - After clipping (round 5): mu=-0.0125, std=0.5316, min=-1.6076, max=1.5826
+ - Random Projection: mu=0.0000, std=0.0238
+[Layer 11]
+ - Before clipping: mu=-0.0339, std=0.9530, min=-29.0101, max=6.5381
+ - After clipping (round 1): mu=-0.0129, std=0.5541, min=-2.8929, max=2.8251
+ - After clipping (round 2): mu=-0.0114, std=0.5249, min=-1.6753, max=1.6496
+ - After clipping (round 3): mu=-0.0112, std=0.5216, min=-1.5862, max=1.5635
+ - After clipping (round 4): mu=-0.0111, std=0.5212, min=-1.5760, max=1.5536
+ - After clipping (round 5): mu=-0.0111, std=0.5211, min=-1.5747, max=1.5524
+ - Random Projection: mu=0.0000, std=0.0233
+[Layer 12]
+ - Before clipping: mu=-0.0436, std=0.9697, min=-29.6372, max=6.9025
+ - After clipping (round 1): mu=-0.0224, std=0.5646, min=-2.9526, max=2.8654
+ - After clipping (round 2): mu=-0.0208, std=0.5350, min=-1.7161, max=1.6714
+ - After clipping (round 3): mu=-0.0206, std=0.5315, min=-1.6258, max=1.5841
+ - After clipping (round 4): mu=-0.0206, std=0.5311, min=-1.6153, max=1.5740
+ - After clipping (round 5): mu=-0.0206, std=0.5311, min=-1.6140, max=1.5727
+ - Random Projection: mu=0.0000, std=0.0237
+[Layer 13]
+ - Before clipping: mu=-0.0439, std=0.9759, min=-29.8608, max=6.4581
+ - After clipping (round 1): mu=-0.0231, std=0.5811, min=-2.9715, max=2.8838
+ - After clipping (round 2): mu=-0.0223, std=0.5564, min=-1.7664, max=1.7202
+ - After clipping (round 3): mu=-0.0221, std=0.5537, min=-1.6914, max=1.6469
+ - After clipping (round 4): mu=-0.0221, std=0.5534, min=-1.6833, max=1.6391
+ - After clipping (round 5): mu=-0.0221, std=0.5534, min=-1.6824, max=1.6382
+ - Random Projection: mu=0.0000, std=0.0247
+[Layer 14]
+ - Before clipping: mu=-0.0427, std=0.9817, min=-30.1039, max=5.5881
+ - After clipping (round 1): mu=-0.0218, std=0.5850, min=-2.9879, max=2.9024
+ - After clipping (round 2): mu=-0.0212, std=0.5630, min=-1.7767, max=1.7332
+ - After clipping (round 3): mu=-0.0211, std=0.5609, min=-1.7104, max=1.6679
+ - After clipping (round 4): mu=-0.0211, std=0.5606, min=-1.7038, max=1.6615
+ - After clipping (round 5): mu=-0.0211, std=0.5606, min=-1.7031, max=1.6608
+ - Random Projection: mu=0.0000, std=0.0251
+[Layer 15]
+ - Before clipping: mu=-0.0420, std=0.9937, min=-28.0521, max=5.7849
+ - After clipping (round 1): mu=-0.0160, std=0.5892, min=-3.0229, max=2.9390
+ - After clipping (round 2): mu=-0.0146, std=0.5655, min=-1.7837, max=1.7517
+ - After clipping (round 3): mu=-0.0145, std=0.5633, min=-1.7112, max=1.6819
+ - After clipping (round 4): mu=-0.0145, std=0.5630, min=-1.7043, max=1.6753
+ - After clipping (round 5): mu=-0.0145, std=0.5630, min=-1.7036, max=1.6746
+ - Random Projection: mu=0.0000, std=0.0252
+[Layer 16]
+ - Before clipping: mu=-0.0330, std=0.9990, min=-31.5352, max=6.1703
+ - After clipping (round 1): mu=-0.0045, std=0.5851, min=-3.0300, max=2.9640
+ - After clipping (round 2): mu=-0.0032, std=0.5614, min=-1.7597, max=1.7507
+ - After clipping (round 3): mu=-0.0031, std=0.5591, min=-1.6873, max=1.6809
+ - After clipping (round 4): mu=-0.0031, std=0.5589, min=-1.6805, max=1.6743
+ - After clipping (round 5): mu=-0.0031, std=0.5589, min=-1.6798, max=1.6737
+ - Random Projection: mu=0.0000, std=0.0250
+[Layer 17]
+ - Before clipping: mu=-0.0316, std=0.9756, min=-30.3693, max=6.1568
+ - After clipping (round 1): mu=-0.0038, std=0.5775, min=-2.9584, max=2.8953
+ - After clipping (round 2): mu=-0.0028, std=0.5549, min=-1.7364, max=1.7287
+ - After clipping (round 3): mu=-0.0028, std=0.5528, min=-1.6677, max=1.6620
+ - After clipping (round 4): mu=-0.0028, std=0.5526, min=-1.6613, max=1.6557
+ - After clipping (round 5): mu=-0.0028, std=0.5526, min=-1.6607, max=1.6551
+ - Random Projection: mu=0.0000, std=0.0247
+[Layer 18]
+ - Before clipping: mu=-0.0307, std=0.9736, min=-30.4398, max=5.7133
+ - After clipping (round 1): mu=-0.0036, std=0.5794, min=-2.9515, max=2.8901
+ - After clipping (round 2): mu=-0.0030, std=0.5566, min=-1.7419, max=1.7347
+ - After clipping (round 3): mu=-0.0030, std=0.5544, min=-1.6727, max=1.6666
+ - After clipping (round 4): mu=-0.0030, std=0.5542, min=-1.6663, max=1.6602
+ - After clipping (round 5): mu=-0.0030, std=0.5542, min=-1.6656, max=1.6596
+ - Random Projection: mu=0.0000, std=0.0248
+[Layer 19]
+ - Before clipping: mu=-0.0297, std=0.9608, min=-29.4802, max=5.3911
+ - After clipping (round 1): mu=-0.0035, std=0.5679, min=-2.9120, max=2.8527
+ - After clipping (round 2): mu=-0.0030, std=0.5442, min=-1.7073, max=1.7004
+ - After clipping (round 3): mu=-0.0030, std=0.5420, min=-1.6356, max=1.6297
+ - After clipping (round 4): mu=-0.0029, std=0.5418, min=-1.6289, max=1.6230
+ - After clipping (round 5): mu=-0.0029, std=0.5417, min=-1.6283, max=1.6224
+ - Random Projection: mu=0.0000, std=0.0242
+[Layer 20]
+ - Before clipping: mu=-0.0287, std=0.9458, min=-28.9146, max=5.2795
+ - After clipping (round 1): mu=-0.0037, std=0.5615, min=-2.8661, max=2.8087
+ - After clipping (round 2): mu=-0.0033, std=0.5375, min=-1.6882, max=1.6808
+ - After clipping (round 3): mu=-0.0033, std=0.5352, min=-1.6157, max=1.6090
+ - After clipping (round 4): mu=-0.0033, std=0.5350, min=-1.6090, max=1.6024
+ - After clipping (round 5): mu=-0.0033, std=0.5350, min=-1.6084, max=1.6017
+ - Random Projection: mu=0.0000, std=0.0239
+[Layer 21]
+ - Before clipping: mu=-0.0333, std=0.9892, min=-31.2373, max=5.2691
+ - After clipping (round 1): mu=-0.0074, std=0.5636, min=-3.0007, max=2.9342
+ - After clipping (round 2): mu=-0.0070, std=0.5369, min=-1.6980, max=1.6833
+ - After clipping (round 3): mu=-0.0070, std=0.5344, min=-1.6177, max=1.6037
+ - After clipping (round 4): mu=-0.0070, std=0.5342, min=-1.6103, max=1.5962
+ - After clipping (round 5): mu=-0.0070, std=0.5341, min=-1.6095, max=1.5955
+ - Random Projection: mu=0.0000, std=0.0239
+[Layer 22]
+ - Before clipping: mu=-0.0415, std=1.0060, min=-32.0824, max=5.1278
+ - After clipping (round 1): mu=-0.0152, std=0.5421, min=-3.0596, max=2.9766
+ - After clipping (round 2): mu=-0.0147, std=0.5143, min=-1.6414, max=1.6111
+ - After clipping (round 3): mu=-0.0147, std=0.5118, min=-1.5577, max=1.5284
+ - After clipping (round 4): mu=-0.0147, std=0.5116, min=-1.5501, max=1.5208
+ - After clipping (round 5): mu=-0.0147, std=0.5115, min=-1.5494, max=1.5200
+ - Random Projection: mu=0.0000, std=0.0229
+[Layer 23]
+ - Before clipping: mu=-0.0311, std=1.0086, min=-32.3887, max=5.4185
+ - After clipping (round 1): mu=-0.0053, std=0.5463, min=-3.0568, max=2.9946
+ - After clipping (round 2): mu=-0.0049, std=0.5190, min=-1.6442, max=1.6335
+ - After clipping (round 3): mu=-0.0050, std=0.5164, min=-1.5619, max=1.5520
+ - After clipping (round 4): mu=-0.0050, std=0.5162, min=-1.5543, max=1.5443
+ - After clipping (round 5): mu=-0.0050, std=0.5161, min=-1.5535, max=1.5435
+ - Random Projection: mu=0.0000, std=0.0231
+Random projections initialized.
+[# API Calls 50] loss: 1.4455. Current perf: 0.3542. Best perf so far: 0.4167
+[# API Calls 100] loss: 1.4172. Current perf: 0.3333. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.4888. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 150] loss: 1.3424. Current perf: 0.3542. Best perf so far: 0.4167
+[# API Calls 200] loss: 1.3163. Current perf: 0.3333. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.3722. Dev perf: 0.4583. Best dev perf: 0.4583
+********* Done *********
+[# API Calls 250] loss: 1.2477. Current perf: 0.3125. Best perf so far: 0.4167
+[# API Calls 300] loss: 1.237. Current perf: 0.3125. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.2989. Dev perf: 0.3958. Best dev perf: 0.4583
+********* Done *********
+[# API Calls 350] loss: 1.1739. Current perf: 0.3125. Best perf so far: 0.4167
+[# API Calls 400] loss: 1.1267. Current perf: 0.3958. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.2022. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 450] loss: 1.097. Current perf: 0.4167. Best perf so far: 0.4375
+[# API Calls 500] loss: 1.0867. Current perf: 0.4375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.1873. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 550] loss: 1.0789. Current perf: 0.3958. Best perf so far: 0.5208
+[# API Calls 600] loss: 1.0863. Current perf: 0.3958. Best perf so far: 0.5208
+********* Evaluated on dev set *********
+Dev loss: 1.15. Dev perf: 0.4375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 650] loss: 1.081. Current perf: 0.3958. Best perf so far: 0.5208
+[# API Calls 700] loss: 1.0651. Current perf: 0.4375. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.1206. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 750] loss: 1.0604. Current perf: 0.4375. Best perf so far: 0.5417
+[# API Calls 800] loss: 1.0467. Current perf: 0.5208. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.101. Dev perf: 0.4375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 850] loss: 1.0306. Current perf: 0.5417. Best perf so far: 0.5625
+[# API Calls 900] loss: 1.0265. Current perf: 0.5. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.1104. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 950] loss: 1.0062. Current perf: 0.5417. Best perf so far: 0.5625
+[# API Calls 1000] loss: 1.0061. Current perf: 0.5208. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.0828. Dev perf: 0.4375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1050] loss: 1.0047. Current perf: 0.4792. Best perf so far: 0.5833
+[# API Calls 1100] loss: 1.0033. Current perf: 0.5. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1150] loss: 0.9916. Current perf: 0.5417. Best perf so far: 0.5833
+[# API Calls 1200] loss: 0.9815. Current perf: 0.5417. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1163. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1250] loss: 0.9792. Current perf: 0.5417. Best perf so far: 0.5833
+[# API Calls 1300] loss: 0.9755. Current perf: 0.5833. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1087. Dev perf: 0.4792. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1350] loss: 0.9573. Current perf: 0.5833. Best perf so far: 0.625
+[# API Calls 1400] loss: 0.9704. Current perf: 0.5625. Best perf so far: 0.625
+********* Evaluated on dev set *********
+Dev loss: 1.0813. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1450] loss: 0.945. Current perf: 0.625. Best perf so far: 0.6458
+[# API Calls 1500] loss: 0.9457. Current perf: 0.5833. Best perf so far: 0.6458
+********* Evaluated on dev set *********
+Dev loss: 1.0578. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1550] loss: 0.927. Current perf: 0.6042. Best perf so far: 0.6875
+[# API Calls 1600] loss: 0.9253. Current perf: 0.6458. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.0759. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1650] loss: 0.9122. Current perf: 0.6042. Best perf so far: 0.7292
+[# API Calls 1700] loss: 0.9032. Current perf: 0.6667. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0623. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1750] loss: 0.905. Current perf: 0.6667. Best perf so far: 0.7292
+[# API Calls 1800] loss: 0.9032. Current perf: 0.6875. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0785. Dev perf: 0.4167. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1850] loss: 0.9175. Current perf: 0.625. Best perf so far: 0.7292
+[# API Calls 1900] loss: 0.9026. Current perf: 0.6667. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0794. Dev perf: 0.375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1950] loss: 0.8971. Current perf: 0.6458. Best perf so far: 0.7292
+[# API Calls 2000] loss: 0.9038. Current perf: 0.6042. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0555. Dev perf: 0.4167. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2050] loss: 0.9128. Current perf: 0.6458. Best perf so far: 0.75
+[# API Calls 2100] loss: 0.8907. Current perf: 0.5625. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.0711. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2150] loss: 0.8607. Current perf: 0.75. Best perf so far: 0.7708
+[# API Calls 2200] loss: 0.8568. Current perf: 0.7292. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0793. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2250] loss: 0.8508. Current perf: 0.7292. Best perf so far: 0.7917
+[# API Calls 2300] loss: 0.8696. Current perf: 0.6875. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0897. Dev perf: 0.3333. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2350] loss: 0.843. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 2400] loss: 0.8466. Current perf: 0.7292. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0717. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2450] loss: 0.8351. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 2500] loss: 0.821. Current perf: 0.75. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0586. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2550] loss: 0.8021. Current perf: 0.8542. Best perf so far: 0.8542
+[# API Calls 2600] loss: 0.8088. Current perf: 0.7708. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0934. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2650] loss: 0.7924. Current perf: 0.8333. Best perf so far: 0.8958
+[# API Calls 2700] loss: 0.8037. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.1057. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2750] loss: 0.7841. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 2800] loss: 0.7718. Current perf: 0.7708. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0737. Dev perf: 0.4792. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2850] loss: 0.7671. Current perf: 0.7708. Best perf so far: 0.8958
+[# API Calls 2900] loss: 0.7657. Current perf: 0.8333. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0697. Dev perf: 0.5. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2950] loss: 0.77. Current perf: 0.7708. Best perf so far: 0.8958
+[# API Calls 3000] loss: 0.755. Current perf: 0.75. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0854. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3050] loss: 0.7619. Current perf: 0.7917. Best perf so far: 0.8958
+[# API Calls 3100] loss: 0.764. Current perf: 0.75. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0571. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3150] loss: 0.7614. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 3200] loss: 0.7573. Current perf: 0.7708. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0753. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3250] loss: 0.7557. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 3300] loss: 0.7434. Current perf: 0.7708. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0793. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3350] loss: 0.7364. Current perf: 0.7917. Best perf so far: 0.8958
+[# API Calls 3400] loss: 0.7378. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0778. Dev perf: 0.5. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3450] loss: 0.7284. Current perf: 0.8333. Best perf so far: 0.8958
+[# API Calls 3500] loss: 0.7184. Current perf: 0.8333. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0708. Dev perf: 0.5417. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3550] loss: 0.7093. Current perf: 0.8542. Best perf so far: 0.8958
+[# API Calls 3600] loss: 0.6992. Current perf: 0.7917. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0719. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3650] loss: 0.6915. Current perf: 0.8333. Best perf so far: 0.8958
+[# API Calls 3700] loss: 0.6959. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0705. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3750] loss: 0.6801. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 3800] loss: 0.678. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0634. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3850] loss: 0.6576. Current perf: 0.8542. Best perf so far: 0.8958
+[# API Calls 3900] loss: 0.6597. Current perf: 0.8542. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.0625. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3950] loss: 0.6661. Current perf: 0.8125. Best perf so far: 0.9167
+[# API Calls 4000] loss: 0.6509. Current perf: 0.875. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.0608. Dev perf: 0.4583. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4050] loss: 0.6401. Current perf: 0.8125. Best perf so far: 0.9167
+[# API Calls 4100] loss: 0.662. Current perf: 0.8125. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.0623. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4150] loss: 0.6363. Current perf: 0.8542. Best perf so far: 0.9167
+[# API Calls 4200] loss: 0.6336. Current perf: 0.8958. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.042. Dev perf: 0.4583. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4250] loss: 0.6198. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4300] loss: 0.6135. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0568. Dev perf: 0.3958. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4350] loss: 0.6029. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4400] loss: 0.6206. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0483. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4450] loss: 0.612. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 4500] loss: 0.5998. Current perf: 0.8542. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0081. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4550] loss: 0.5828. Current perf: 0.8542. Best perf so far: 0.9583
+[# API Calls 4600] loss: 0.553. Current perf: 0.8958. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.01. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4650] loss: 0.5562. Current perf: 0.8958. Best perf so far: 0.9583
+[# API Calls 4700] loss: 0.549. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.039. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4750] loss: 0.5297. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 4800] loss: 0.5081. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0544. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4850] loss: 0.5306. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 4900] loss: 0.5489. Current perf: 0.8542. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1122. Dev perf: 0.4375. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 4950] loss: 0.5309. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 5000] loss: 0.4939. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1038. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5050] loss: 0.4971. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5100] loss: 0.4905. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1038. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5150] loss: 0.4491. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5200] loss: 0.4609. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0977. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5250] loss: 0.4595. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5300] loss: 0.4423. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1563. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5350] loss: 0.4319. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5400] loss: 0.424. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2509. Dev perf: 0.4167. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5450] loss: 0.4463. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5500] loss: 0.4278. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2734. Dev perf: 0.4167. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5550] loss: 0.4381. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 5600] loss: 0.4199. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2125. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5650] loss: 0.4116. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 5700] loss: 0.3865. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2315. Dev perf: 0.4167. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5750] loss: 0.3834. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 5800] loss: 0.3808. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2004. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5850] loss: 0.3657. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5900] loss: 0.365. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1757. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 5950] loss: 0.3995. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 6000] loss: 0.3969. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1889. Dev perf: 0.3958. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6050] loss: 0.3649. Current perf: 0.9792. Best perf so far: 0.9792
+[# API Calls 6100] loss: 0.3674. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1311. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6150] loss: 0.3465. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 6200] loss: 0.3446. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1735. Dev perf: 0.4375. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6250] loss: 0.3136. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6300] loss: 0.3244. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1983. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6350] loss: 0.3244. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6400] loss: 0.3758. Current perf: 0.8542. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2278. Dev perf: 0.4375. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6450] loss: 0.3043. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6500] loss: 0.3495. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2839. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6550] loss: 0.3312. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6600] loss: 0.3159. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.3385. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6650] loss: 0.3038. Current perf: 0.9792. Best perf so far: 0.9792
+[# API Calls 6700] loss: 0.307. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.205. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6750] loss: 0.2984. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6800] loss: 0.3115. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2678. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6850] loss: 0.3098. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6900] loss: 0.3036. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.191. Dev perf: 0.4375. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 6950] loss: 0.2931. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7000] loss: 0.3206. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2269. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7050] loss: 0.2851. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 7100] loss: 0.2616. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2564. Dev perf: 0.4583. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7150] loss: 0.2655. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 7200] loss: 0.2565. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2989. Dev perf: 0.4583. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7250] loss: 0.2516. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7300] loss: 0.2699. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2851. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7350] loss: 0.2758. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 7400] loss: 0.2687. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2612. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7450] loss: 0.2754. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 7500] loss: 0.2618. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1103. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 7550] loss: 0.2602. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7600] loss: 0.2539. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1478. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 7650] loss: 0.2375. Current perf: 0.9583. Best perf so far: 0.9792
+Done. Elapsed time: 39.33565354347229 (mins)
+===== seed: 8 finished! =====
+===== seed: 13 start! =====
+/data/qingyang/anaconda3/envs/bbt/lib/python3.8/site-packages/cma/s.py:13: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 99.27ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 5019.86ex/s]
+{'text1': 'a man is behind a cart trying to sell various food items.', 'text2': 'A man sells fruits from a cart.', 'labels': 1, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . a man is behind a cart trying to sell various food items. ? <mask> , A man sells fruits from a cart.", 'target_text': 'Maybe'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 28.73ba/s]
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 907.27ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 5056.93ex/s]
+{'text1': 'A baby is sleeping with his hand on his face.', 'text2': 'A baby is sleeping with his hand near his eyes.', 'labels': 0, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . A baby is sleeping with his hand on his face. ? <mask> , A baby is sleeping with his hand near his eyes.", 'target_text': 'Yes'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 34.85ba/s]
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at roberta-large and are newly initialized: ['lm_head.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+# of train data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 66       | 14541  |
++------------------------+------------------------+----------+--------+
+
+# of dev data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 64       | 9904   |
++------------------------+------------------------+----------+--------+
+[Embedding] mu: -0.018104109913110733 | std: 0.13582643866539001 [RandProj]  mu: 0.0 | std: 0.006074342999950358
+Calculating std for random projections...
+[Layer 1]
+ - Before clipping: mu=-0.0084, std=0.8490, min=-16.1185, max=17.4635
+ - After clipping (round 1): mu=-0.0066, std=0.7081, min=-2.5552, max=2.5385
+ - After clipping (round 2): mu=-0.0059, std=0.7006, min=-2.1308, max=2.1176
+ - After clipping (round 3): mu=-0.0059, std=0.7001, min=-2.1077, max=2.0958
+ - After clipping (round 4): mu=-0.0059, std=0.7000, min=-2.1061, max=2.0944
+ - After clipping (round 5): mu=-0.0059, std=0.7000, min=-2.1060, max=2.0943
+ - Random Projection: mu=0.0000, std=0.0313
+[Layer 2]
+ - Before clipping: mu=-0.0297, std=0.8793, min=-19.9527, max=16.2033
+ - After clipping (round 1): mu=-0.0193, std=0.6795, min=-2.6675, max=2.6081
+ - After clipping (round 2): mu=-0.0187, std=0.6674, min=-2.0577, max=2.0191
+ - After clipping (round 3): mu=-0.0187, std=0.6664, min=-2.0208, max=1.9834
+ - After clipping (round 4): mu=-0.0187, std=0.6663, min=-2.0178, max=1.9805
+ - After clipping (round 5): mu=-0.0187, std=0.6663, min=-2.0176, max=1.9803
+ - Random Projection: mu=0.0000, std=0.0298
+[Layer 3]
+ - Before clipping: mu=-0.0320, std=0.9154, min=-21.1171, max=14.2032
+ - After clipping (round 1): mu=-0.0186, std=0.6752, min=-2.7781, max=2.7140
+ - After clipping (round 2): mu=-0.0182, std=0.6610, min=-2.0441, max=2.0069
+ - After clipping (round 3): mu=-0.0182, std=0.6599, min=-2.0012, max=1.9647
+ - After clipping (round 4): mu=-0.0182, std=0.6598, min=-1.9979, max=1.9615
+ - After clipping (round 5): mu=-0.0182, std=0.6598, min=-1.9976, max=1.9612
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 4]
+ - Before clipping: mu=-0.0354, std=0.9235, min=-25.4569, max=11.3825
+ - After clipping (round 1): mu=-0.0199, std=0.6892, min=-2.8058, max=2.7350
+ - After clipping (round 2): mu=-0.0193, std=0.6763, min=-2.0874, max=2.0476
+ - After clipping (round 3): mu=-0.0193, std=0.6754, min=-2.0483, max=2.0097
+ - After clipping (round 4): mu=-0.0193, std=0.6753, min=-2.0455, max=2.0069
+ - After clipping (round 5): mu=-0.0193, std=0.6753, min=-2.0453, max=2.0067
+ - Random Projection: mu=0.0000, std=0.0302
+[Layer 5]
+ - Before clipping: mu=-0.0390, std=0.9433, min=-26.9722, max=8.4252
+ - After clipping (round 1): mu=-0.0210, std=0.6770, min=-2.8690, max=2.7909
+ - After clipping (round 2): mu=-0.0201, std=0.6626, min=-2.0520, max=2.0100
+ - After clipping (round 3): mu=-0.0201, std=0.6615, min=-2.0078, max=1.9675
+ - After clipping (round 4): mu=-0.0201, std=0.6614, min=-2.0046, max=1.9644
+ - After clipping (round 5): mu=-0.0201, std=0.6614, min=-2.0043, max=1.9642
+ - Random Projection: mu=0.0000, std=0.0296
+[Layer 6]
+ - Before clipping: mu=-0.0450, std=0.9611, min=-28.5187, max=7.0697
+ - After clipping (round 1): mu=-0.0258, std=0.6818, min=-2.9285, max=2.8384
+ - After clipping (round 2): mu=-0.0250, std=0.6653, min=-2.0712, max=2.0195
+ - After clipping (round 3): mu=-0.0249, std=0.6639, min=-2.0209, max=1.9710
+ - After clipping (round 4): mu=-0.0249, std=0.6638, min=-2.0167, max=1.9670
+ - After clipping (round 5): mu=-0.0249, std=0.6638, min=-2.0164, max=1.9666
+ - Random Projection: mu=0.0000, std=0.0297
+[Layer 7]
+ - Before clipping: mu=-0.0407, std=0.9766, min=-29.8482, max=7.0750
+ - After clipping (round 1): mu=-0.0199, std=0.6528, min=-2.9705, max=2.8891
+ - After clipping (round 2): mu=-0.0188, std=0.6319, min=-1.9784, max=1.9386
+ - After clipping (round 3): mu=-0.0187, std=0.6299, min=-1.9144, max=1.8768
+ - After clipping (round 4): mu=-0.0187, std=0.6297, min=-1.9084, max=1.8710
+ - After clipping (round 5): mu=-0.0187, std=0.6297, min=-1.9078, max=1.8704
+ - Random Projection: mu=0.0000, std=0.0282
+[Layer 8]
+ - Before clipping: mu=-0.0431, std=0.9942, min=-31.1845, max=6.2823
+ - After clipping (round 1): mu=-0.0215, std=0.6213, min=-3.0257, max=2.9394
+ - After clipping (round 2): mu=-0.0197, std=0.5955, min=-1.8855, max=1.8426
+ - After clipping (round 3): mu=-0.0196, std=0.5927, min=-1.8063, max=1.7668
+ - After clipping (round 4): mu=-0.0195, std=0.5924, min=-1.7978, max=1.7586
+ - After clipping (round 5): mu=-0.0195, std=0.5924, min=-1.7968, max=1.7577
+ - Random Projection: mu=0.0000, std=0.0265
+[Layer 9]
+ - Before clipping: mu=-0.0429, std=0.9880, min=-30.7157, max=6.5528
+ - After clipping (round 1): mu=-0.0215, std=0.5988, min=-3.0069, max=2.9212
+ - After clipping (round 2): mu=-0.0196, std=0.5709, min=-1.8178, max=1.7749
+ - After clipping (round 3): mu=-0.0194, std=0.5677, min=-1.7323, max=1.6931
+ - After clipping (round 4): mu=-0.0194, std=0.5673, min=-1.7225, max=1.6837
+ - After clipping (round 5): mu=-0.0194, std=0.5673, min=-1.7214, max=1.6826
+ - Random Projection: mu=0.0000, std=0.0254
+[Layer 10]
+ - Before clipping: mu=-0.0365, std=0.9939, min=-30.8516, max=7.2623
+ - After clipping (round 1): mu=-0.0145, std=0.5698, min=-3.0183, max=2.9453
+ - After clipping (round 2): mu=-0.0129, std=0.5389, min=-1.7240, max=1.6949
+ - After clipping (round 3): mu=-0.0126, std=0.5353, min=-1.6295, max=1.6038
+ - After clipping (round 4): mu=-0.0126, std=0.5349, min=-1.6186, max=1.5934
+ - After clipping (round 5): mu=-0.0126, std=0.5349, min=-1.6173, max=1.5921
+ - Random Projection: mu=0.0000, std=0.0239
+[Layer 11]
+ - Before clipping: mu=-0.0339, std=0.9532, min=-29.1315, max=6.6810
+ - After clipping (round 1): mu=-0.0130, std=0.5568, min=-2.8935, max=2.8257
+ - After clipping (round 2): mu=-0.0114, std=0.5276, min=-1.6833, max=1.6574
+ - After clipping (round 3): mu=-0.0112, std=0.5243, min=-1.5942, max=1.5714
+ - After clipping (round 4): mu=-0.0112, std=0.5239, min=-1.5841, max=1.5616
+ - After clipping (round 5): mu=-0.0112, std=0.5238, min=-1.5829, max=1.5605
+ - Random Projection: mu=0.0000, std=0.0234
+[Layer 12]
+ - Before clipping: mu=-0.0436, std=0.9698, min=-29.8370, max=6.6770
+ - After clipping (round 1): mu=-0.0225, std=0.5683, min=-2.9531, max=2.8659
+ - After clipping (round 2): mu=-0.0210, std=0.5388, min=-1.7273, max=1.6823
+ - After clipping (round 3): mu=-0.0208, std=0.5353, min=-1.6372, max=1.5953
+ - After clipping (round 4): mu=-0.0207, std=0.5349, min=-1.6268, max=1.5853
+ - After clipping (round 5): mu=-0.0207, std=0.5349, min=-1.6255, max=1.5840
+ - Random Projection: mu=0.0000, std=0.0239
+[Layer 13]
+ - Before clipping: mu=-0.0439, std=0.9759, min=-30.0600, max=6.1901
+ - After clipping (round 1): mu=-0.0231, std=0.5821, min=-2.9716, max=2.8838
+ - After clipping (round 2): mu=-0.0222, std=0.5574, min=-1.7696, max=1.7233
+ - After clipping (round 3): mu=-0.0221, std=0.5547, min=-1.6943, max=1.6498
+ - After clipping (round 4): mu=-0.0221, std=0.5544, min=-1.6861, max=1.6419
+ - After clipping (round 5): mu=-0.0221, std=0.5543, min=-1.6852, max=1.6410
+ - Random Projection: mu=0.0000, std=0.0248
+[Layer 14]
+ - Before clipping: mu=-0.0427, std=0.9817, min=-30.3744, max=5.3643
+ - After clipping (round 1): mu=-0.0218, std=0.5859, min=-2.9878, max=2.9024
+ - After clipping (round 2): mu=-0.0212, std=0.5640, min=-1.7795, max=1.7360
+ - After clipping (round 3): mu=-0.0211, std=0.5618, min=-1.7131, max=1.6706
+ - After clipping (round 4): mu=-0.0211, std=0.5616, min=-1.7065, max=1.6642
+ - After clipping (round 5): mu=-0.0211, std=0.5615, min=-1.7058, max=1.6636
+ - Random Projection: mu=0.0000, std=0.0251
+[Layer 15]
+ - Before clipping: mu=-0.0420, std=0.9935, min=-28.0955, max=5.8305
+ - After clipping (round 1): mu=-0.0160, std=0.5902, min=-3.0226, max=2.9387
+ - After clipping (round 2): mu=-0.0146, std=0.5665, min=-1.7867, max=1.7547
+ - After clipping (round 3): mu=-0.0145, std=0.5642, min=-1.7140, max=1.6849
+ - After clipping (round 4): mu=-0.0145, std=0.5640, min=-1.7072, max=1.6782
+ - After clipping (round 5): mu=-0.0145, std=0.5640, min=-1.7065, max=1.6776
+ - Random Projection: mu=0.0000, std=0.0252
+[Layer 16]
+ - Before clipping: mu=-0.0330, std=0.9990, min=-31.5366, max=6.0858
+ - After clipping (round 1): mu=-0.0046, std=0.5867, min=-3.0300, max=2.9640
+ - After clipping (round 2): mu=-0.0032, std=0.5630, min=-1.7647, max=1.7555
+ - After clipping (round 3): mu=-0.0031, std=0.5608, min=-1.6922, max=1.6859
+ - After clipping (round 4): mu=-0.0030, std=0.5606, min=-1.6855, max=1.6794
+ - After clipping (round 5): mu=-0.0030, std=0.5606, min=-1.6848, max=1.6787
+ - Random Projection: mu=0.0000, std=0.0251
+[Layer 17]
+ - Before clipping: mu=-0.0316, std=0.9758, min=-30.3687, max=6.0865
+ - After clipping (round 1): mu=-0.0038, std=0.5795, min=-2.9589, max=2.8957
+ - After clipping (round 2): mu=-0.0028, std=0.5570, min=-1.7422, max=1.7345
+ - After clipping (round 3): mu=-0.0027, std=0.5549, min=-1.6737, max=1.6681
+ - After clipping (round 4): mu=-0.0027, std=0.5547, min=-1.6674, max=1.6619
+ - After clipping (round 5): mu=-0.0027, std=0.5546, min=-1.6667, max=1.6613
+ - Random Projection: mu=0.0000, std=0.0248
+[Layer 18]
+ - Before clipping: mu=-0.0307, std=0.9738, min=-30.4377, max=5.6032
+ - After clipping (round 1): mu=-0.0036, std=0.5817, min=-2.9519, max=2.8906
+ - After clipping (round 2): mu=-0.0030, std=0.5591, min=-1.7488, max=1.7416
+ - After clipping (round 3): mu=-0.0030, std=0.5570, min=-1.6804, max=1.6744
+ - After clipping (round 4): mu=-0.0030, std=0.5568, min=-1.6740, max=1.6681
+ - After clipping (round 5): mu=-0.0030, std=0.5568, min=-1.6734, max=1.6674
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 19]
+ - Before clipping: mu=-0.0297, std=0.9610, min=-29.4960, max=5.2987
+ - After clipping (round 1): mu=-0.0034, std=0.5696, min=-2.9127, max=2.8533
+ - After clipping (round 2): mu=-0.0029, std=0.5461, min=-1.7123, max=1.7054
+ - After clipping (round 3): mu=-0.0029, std=0.5439, min=-1.6412, max=1.6354
+ - After clipping (round 4): mu=-0.0029, std=0.5437, min=-1.6346, max=1.6289
+ - After clipping (round 5): mu=-0.0029, std=0.5437, min=-1.6339, max=1.6282
+ - Random Projection: mu=0.0000, std=0.0243
+[Layer 20]
+ - Before clipping: mu=-0.0287, std=0.9460, min=-28.9110, max=5.2284
+ - After clipping (round 1): mu=-0.0037, std=0.5628, min=-2.8668, max=2.8094
+ - After clipping (round 2): mu=-0.0032, std=0.5389, min=-1.6920, max=1.6847
+ - After clipping (round 3): mu=-0.0032, std=0.5367, min=-1.6200, max=1.6135
+ - After clipping (round 4): mu=-0.0032, std=0.5365, min=-1.6134, max=1.6069
+ - After clipping (round 5): mu=-0.0032, std=0.5365, min=-1.6128, max=1.6063
+ - Random Projection: mu=0.0000, std=0.0240
+[Layer 21]
+ - Before clipping: mu=-0.0333, std=0.9892, min=-31.2373, max=5.1787
+ - After clipping (round 1): mu=-0.0073, std=0.5645, min=-3.0009, max=2.9343
+ - After clipping (round 2): mu=-0.0069, std=0.5380, min=-1.7007, max=1.6860
+ - After clipping (round 3): mu=-0.0069, std=0.5355, min=-1.6208, max=1.6070
+ - After clipping (round 4): mu=-0.0069, std=0.5353, min=-1.6134, max=1.5996
+ - After clipping (round 5): mu=-0.0069, std=0.5352, min=-1.6127, max=1.5989
+ - Random Projection: mu=0.0000, std=0.0239
+[Layer 22]
+ - Before clipping: mu=-0.0415, std=1.0060, min=-32.0823, max=5.0786
+ - After clipping (round 1): mu=-0.0151, std=0.5427, min=-3.0595, max=2.9765
+ - After clipping (round 2): mu=-0.0146, std=0.5152, min=-1.6432, max=1.6130
+ - After clipping (round 3): mu=-0.0146, std=0.5127, min=-1.5602, max=1.5311
+ - After clipping (round 4): mu=-0.0146, std=0.5125, min=-1.5528, max=1.5236
+ - After clipping (round 5): mu=-0.0146, std=0.5125, min=-1.5521, max=1.5229
+ - Random Projection: mu=0.0000, std=0.0229
+[Layer 23]
+ - Before clipping: mu=-0.0311, std=1.0085, min=-32.3863, max=5.2936
+ - After clipping (round 1): mu=-0.0053, std=0.5477, min=-3.0566, max=2.9944
+ - After clipping (round 2): mu=-0.0049, std=0.5207, min=-1.6483, max=1.6377
+ - After clipping (round 3): mu=-0.0050, std=0.5182, min=-1.5669, max=1.5571
+ - After clipping (round 4): mu=-0.0050, std=0.5179, min=-1.5595, max=1.5496
+ - After clipping (round 5): mu=-0.0050, std=0.5179, min=-1.5588, max=1.5488
+ - Random Projection: mu=0.0000, std=0.0232
+Random projections initialized.
+[# API Calls 50] loss: 1.3951. Current perf: 0.4167. Best perf so far: 0.4792
+[# API Calls 100] loss: 1.3735. Current perf: 0.4167. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.4478. Dev perf: 0.3125. Best dev perf: 0.3125
+********* Done *********
+[# API Calls 150] loss: 1.327. Current perf: 0.4375. Best perf so far: 0.4792
+[# API Calls 200] loss: 1.2545. Current perf: 0.4583. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.3177. Dev perf: 0.2708. Best dev perf: 0.3125
+********* Done *********
+[# API Calls 250] loss: 1.2181. Current perf: 0.4167. Best perf so far: 0.4792
+[# API Calls 300] loss: 1.2007. Current perf: 0.4375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.2724. Dev perf: 0.3333. Best dev perf: 0.3333
+********* Done *********
+[# API Calls 350] loss: 1.1319. Current perf: 0.4375. Best perf so far: 0.5
+[# API Calls 400] loss: 1.1056. Current perf: 0.4792. Best perf so far: 0.5
+********* Evaluated on dev set *********
+Dev loss: 1.1645. Dev perf: 0.3333. Best dev perf: 0.3333
+********* Done *********
+[# API Calls 450] loss: 1.0628. Current perf: 0.5208. Best perf so far: 0.5833
+[# API Calls 500] loss: 1.0438. Current perf: 0.4375. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1068. Dev perf: 0.3958. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 550] loss: 1.0263. Current perf: 0.5208. Best perf so far: 0.5833
+[# API Calls 600] loss: 1.0071. Current perf: 0.5208. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1077. Dev perf: 0.3542. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 650] loss: 1.0237. Current perf: 0.6042. Best perf so far: 0.6042
+[# API Calls 700] loss: 0.9961. Current perf: 0.5208. Best perf so far: 0.625
+********* Evaluated on dev set *********
+Dev loss: 1.0888. Dev perf: 0.3542. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 750] loss: 0.9963. Current perf: 0.5833. Best perf so far: 0.625
+[# API Calls 800] loss: 0.9954. Current perf: 0.6042. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1047. Dev perf: 0.3125. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 850] loss: 0.9847. Current perf: 0.6458. Best perf so far: 0.6667
+[# API Calls 900] loss: 0.9778. Current perf: 0.5625. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1037. Dev perf: 0.3958. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 950] loss: 0.9734. Current perf: 0.625. Best perf so far: 0.6667
+[# API Calls 1000] loss: 0.9624. Current perf: 0.625. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.092. Dev perf: 0.3542. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 1050] loss: 0.9572. Current perf: 0.5833. Best perf so far: 0.6667
+[# API Calls 1100] loss: 0.9546. Current perf: 0.6458. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1143. Dev perf: 0.375. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 1150] loss: 0.9438. Current perf: 0.6458. Best perf so far: 0.6875
+[# API Calls 1200] loss: 0.9273. Current perf: 0.6875. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.113. Dev perf: 0.375. Best dev perf: 0.3958
+********* Done *********
+[# API Calls 1250] loss: 0.9208. Current perf: 0.625. Best perf so far: 0.7083
+[# API Calls 1300] loss: 0.9073. Current perf: 0.7083. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0823. Dev perf: 0.4375. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 1350] loss: 0.8877. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 1400] loss: 0.8737. Current perf: 0.75. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0697. Dev perf: 0.4375. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 1450] loss: 0.8594. Current perf: 0.7917. Best perf so far: 0.7917
+[# API Calls 1500] loss: 0.8602. Current perf: 0.6458. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0609. Dev perf: 0.3958. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 1550] loss: 0.8556. Current perf: 0.625. Best perf so far: 0.7917
+[# API Calls 1600] loss: 0.8473. Current perf: 0.6875. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0449. Dev perf: 0.4792. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1650] loss: 0.8319. Current perf: 0.7083. Best perf so far: 0.8125
+[# API Calls 1700] loss: 0.8249. Current perf: 0.75. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0363. Dev perf: 0.4792. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1750] loss: 0.82. Current perf: 0.75. Best perf so far: 0.8125
+[# API Calls 1800] loss: 0.8158. Current perf: 0.6667. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0759. Dev perf: 0.4583. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1850] loss: 0.8115. Current perf: 0.7292. Best perf so far: 0.8125
+[# API Calls 1900] loss: 0.8084. Current perf: 0.6667. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0892. Dev perf: 0.4792. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1950] loss: 0.8112. Current perf: 0.625. Best perf so far: 0.8125
+[# API Calls 2000] loss: 0.7988. Current perf: 0.7917. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0815. Dev perf: 0.4375. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 2050] loss: 0.7971. Current perf: 0.7917. Best perf so far: 0.8125
+[# API Calls 2100] loss: 0.7886. Current perf: 0.8125. Best perf so far: 0.8333
+********* Evaluated on dev set *********
+Dev loss: 1.0846. Dev perf: 0.4375. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 2150] loss: 0.7832. Current perf: 0.7292. Best perf so far: 0.8333
+[# API Calls 2200] loss: 0.7753. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0537. Dev perf: 0.4792. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 2250] loss: 0.7626. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 2300] loss: 0.758. Current perf: 0.8125. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.033. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2350] loss: 0.7451. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 2400] loss: 0.7436. Current perf: 0.7917. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.043. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2450] loss: 0.7432. Current perf: 0.7708. Best perf so far: 0.875
+[# API Calls 2500] loss: 0.7403. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0259. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2550] loss: 0.743. Current perf: 0.7292. Best perf so far: 0.875
+[# API Calls 2600] loss: 0.7325. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 0.9871. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2650] loss: 0.7118. Current perf: 0.8333. Best perf so far: 0.875
+[# API Calls 2700] loss: 0.7216. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0172. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2750] loss: 0.7134. Current perf: 0.7083. Best perf so far: 0.875
+[# API Calls 2800] loss: 0.6937. Current perf: 0.8125. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 0.9834. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 2850] loss: 0.688. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 2900] loss: 0.6852. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 0.9905. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 2950] loss: 0.6807. Current perf: 0.8333. Best perf so far: 0.8958
+[# API Calls 3000] loss: 0.6767. Current perf: 0.8333. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 0.9987. Dev perf: 0.5. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3050] loss: 0.6739. Current perf: 0.7917. Best perf so far: 0.8958
+[# API Calls 3100] loss: 0.672. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 0.9945. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3150] loss: 0.6765. Current perf: 0.7292. Best perf so far: 0.8958
+[# API Calls 3200] loss: 0.6597. Current perf: 0.8125. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0003. Dev perf: 0.4792. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3250] loss: 0.655. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 3300] loss: 0.6312. Current perf: 0.7917. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.0172. Dev perf: 0.4167. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3350] loss: 0.6191. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 3400] loss: 0.6234. Current perf: 0.8333. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 0.9965. Dev perf: 0.5208. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3450] loss: 0.6275. Current perf: 0.8542. Best perf so far: 0.8958
+[# API Calls 3500] loss: 0.6357. Current perf: 0.8333. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 0.9887. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3550] loss: 0.6316. Current perf: 0.875. Best perf so far: 0.8958
+[# API Calls 3600] loss: 0.617. Current perf: 0.9167. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 0.9432. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3650] loss: 0.6038. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 3700] loss: 0.6067. Current perf: 0.8125. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 0.9286. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 3750] loss: 0.5916. Current perf: 0.9375. Best perf so far: 0.9375
+[# API Calls 3800] loss: 0.58. Current perf: 0.8958. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 0.8889. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 3850] loss: 0.575. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 3900] loss: 0.5692. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 0.8798. Dev perf: 0.6458. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 3950] loss: 0.5564. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4000] loss: 0.5563. Current perf: 0.8542. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 0.9152. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4050] loss: 0.5426. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 4100] loss: 0.5276. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 0.9711. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4150] loss: 0.5397. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 4200] loss: 0.56. Current perf: 0.7917. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0159. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4250] loss: 0.526. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 4300] loss: 0.5037. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9759. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4350] loss: 0.5071. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 4400] loss: 0.5168. Current perf: 0.8542. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9668. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4450] loss: 0.5421. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 4500] loss: 0.5124. Current perf: 0.8542. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9669. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4550] loss: 0.4982. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 4600] loss: 0.5089. Current perf: 0.8333. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9693. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4650] loss: 0.4899. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 4700] loss: 0.482. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9294. Dev perf: 0.6458. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4750] loss: 0.4802. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 4800] loss: 0.4636. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.941. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4850] loss: 0.488. Current perf: 0.8333. Best perf so far: 0.9792
+[# API Calls 4900] loss: 0.4772. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.8909. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 4950] loss: 0.5254. Current perf: 0.7708. Best perf so far: 0.9792
+[# API Calls 5000] loss: 0.4579. Current perf: 0.875. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9271. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5050] loss: 0.4261. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5100] loss: 0.4355. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.8562. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5150] loss: 0.4657. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 5200] loss: 0.4244. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9159. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5250] loss: 0.4236. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 5300] loss: 0.4126. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9425. Dev perf: 0.625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5350] loss: 0.4421. Current perf: 0.8958. Best perf so far: 1.0
+[# API Calls 5400] loss: 0.413. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.935. Dev perf: 0.625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5450] loss: 0.4003. Current perf: 0.9375. Best perf so far: 1.0
+[# API Calls 5500] loss: 0.3625. Current perf: 0.9792. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.033. Dev perf: 0.5208. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5550] loss: 0.413. Current perf: 0.875. Best perf so far: 1.0
+[# API Calls 5600] loss: 0.3978. Current perf: 0.8542. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0603. Dev perf: 0.5417. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5650] loss: 0.3471. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 5700] loss: 0.3455. Current perf: 0.875. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0215. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5750] loss: 0.3447. Current perf: 0.9375. Best perf so far: 1.0
+[# API Calls 5800] loss: 0.3422. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0737. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5850] loss: 0.3748. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 5900] loss: 0.4029. Current perf: 0.8958. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0021. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 5950] loss: 0.3762. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 6000] loss: 0.3701. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9715. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6050] loss: 0.4022. Current perf: 0.8958. Best perf so far: 1.0
+[# API Calls 6100] loss: 0.3486. Current perf: 0.8958. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9773. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6150] loss: 0.3136. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 6200] loss: 0.3069. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0038. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6250] loss: 0.3157. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 6300] loss: 0.3125. Current perf: 0.9792. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9664. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6350] loss: 0.3011. Current perf: 0.9375. Best perf so far: 1.0
+[# API Calls 6400] loss: 0.4088. Current perf: 0.8542. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0764. Dev perf: 0.4375. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6450] loss: 0.3464. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 6500] loss: 0.2881. Current perf: 0.9792. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9716. Dev perf: 0.5208. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6550] loss: 0.3148. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 6600] loss: 0.3741. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0653. Dev perf: 0.5. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6650] loss: 0.2852. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 6700] loss: 0.259. Current perf: 1.0. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.938. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6750] loss: 0.3051. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 6800] loss: 0.3021. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9906. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6850] loss: 0.2946. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 6900] loss: 0.3304. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9665. Dev perf: 0.5417. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 6950] loss: 0.3102. Current perf: 0.9375. Best perf so far: 1.0
+[# API Calls 7000] loss: 0.3062. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.8589. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7050] loss: 0.2939. Current perf: 1.0. Best perf so far: 1.0
+[# API Calls 7100] loss: 0.2939. Current perf: 0.9792. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9157. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7150] loss: 0.3012. Current perf: 1.0. Best perf so far: 1.0
+[# API Calls 7200] loss: 0.2986. Current perf: 1.0. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.8618. Dev perf: 0.5625. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7250] loss: 0.3094. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 7300] loss: 0.3185. Current perf: 0.9792. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.895. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7350] loss: 0.3726. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 7400] loss: 0.3745. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.8604. Dev perf: 0.5417. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7450] loss: 0.3139. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 7500] loss: 0.3902. Current perf: 0.8542. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.0387. Dev perf: 0.5833. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7550] loss: 0.5339. Current perf: 0.7708. Best perf so far: 1.0
+[# API Calls 7600] loss: 0.2563. Current perf: 1.0. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 0.9135. Dev perf: 0.6042. Best dev perf: 0.6458
+********* Done *********
+[# API Calls 7650] loss: 0.254. Current perf: 0.9792. Best perf so far: 1.0
+Done. Elapsed time: 38.739671107133226 (mins)
+===== seed: 13 finished! =====
+===== seed: 42 start! =====
+/data/qingyang/anaconda3/envs/bbt/lib/python3.8/site-packages/cma/s.py:13: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 104.34ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 4972.62ex/s]
+{'text1': 'An older gentleman in an orange jumpsuit and gray hat is on the curb with a black trash bag and a broom.', 'text2': 'A man is cleaning up around his house.', 'labels': 1, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . An older gentleman in an orange jumpsuit and gray hat is on the curb with a black trash bag and a broom. ? <mask> , A man is cleaning up around his house.", 'target_text': 'Maybe'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 27.45ba/s]
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 862.85ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 3915.34ex/s]
+{'text1': 'a dog chases another dog.', 'text2': 'the dogs are outside', 'labels': 1, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . a dog chases another dog. ? <mask> , the dogs are outside", 'target_text': 'Maybe'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 32.03ba/s]
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at roberta-large and are newly initialized: ['lm_head.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+# of train data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 77       | 14541  |
++------------------------+------------------------+----------+--------+
+
+# of dev data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 60       | 14541  |
++------------------------+------------------------+----------+--------+
+[Embedding] mu: -0.018104109913110733 | std: 0.13582643866539001 [RandProj]  mu: 0.0 | std: 0.006074342999950358
+Calculating std for random projections...
+[Layer 1]
+ - Before clipping: mu=-0.0085, std=0.8520, min=-16.1273, max=17.4752
+ - After clipping (round 1): mu=-0.0067, std=0.7186, min=-2.5644, max=2.5474
+ - After clipping (round 2): mu=-0.0061, std=0.7119, min=-2.1625, max=2.1490
+ - After clipping (round 3): mu=-0.0061, std=0.7115, min=-2.1418, max=2.1296
+ - After clipping (round 4): mu=-0.0061, std=0.7114, min=-2.1405, max=2.1283
+ - After clipping (round 5): mu=-0.0061, std=0.7114, min=-2.1404, max=2.1283
+ - Random Projection: mu=0.0000, std=0.0318
+[Layer 2]
+ - Before clipping: mu=-0.0298, std=0.8805, min=-20.0892, max=16.4768
+ - After clipping (round 1): mu=-0.0195, std=0.6868, min=-2.6713, max=2.6116
+ - After clipping (round 2): mu=-0.0190, std=0.6756, min=-2.0799, max=2.0409
+ - After clipping (round 3): mu=-0.0190, std=0.6748, min=-2.0459, max=2.0079
+ - After clipping (round 4): mu=-0.0190, std=0.6747, min=-2.0433, max=2.0053
+ - After clipping (round 5): mu=-0.0190, std=0.6747, min=-2.0431, max=2.0051
+ - Random Projection: mu=0.0000, std=0.0302
+[Layer 3]
+ - Before clipping: mu=-0.0321, std=0.9156, min=-21.1070, max=14.6315
+ - After clipping (round 1): mu=-0.0188, std=0.6756, min=-2.7788, max=2.7146
+ - After clipping (round 2): mu=-0.0184, std=0.6616, min=-2.0456, max=2.0080
+ - After clipping (round 3): mu=-0.0184, std=0.6606, min=-2.0033, max=1.9664
+ - After clipping (round 4): mu=-0.0184, std=0.6605, min=-2.0001, max=1.9632
+ - After clipping (round 5): mu=-0.0184, std=0.6605, min=-1.9999, max=1.9630
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 4]
+ - Before clipping: mu=-0.0354, std=0.9237, min=-25.4438, max=11.2808
+ - After clipping (round 1): mu=-0.0198, std=0.6854, min=-2.8065, max=2.7357
+ - After clipping (round 2): mu=-0.0193, std=0.6725, min=-2.0760, max=2.0364
+ - After clipping (round 3): mu=-0.0192, std=0.6715, min=-2.0367, max=1.9981
+ - After clipping (round 4): mu=-0.0192, std=0.6714, min=-2.0338, max=1.9953
+ - After clipping (round 5): mu=-0.0192, std=0.6714, min=-2.0336, max=1.9951
+ - Random Projection: mu=0.0000, std=0.0300
+[Layer 5]
+ - Before clipping: mu=-0.0390, std=0.9434, min=-26.9849, max=8.4824
+ - After clipping (round 1): mu=-0.0210, std=0.6745, min=-2.8693, max=2.7913
+ - After clipping (round 2): mu=-0.0201, std=0.6597, min=-2.0446, max=2.0026
+ - After clipping (round 3): mu=-0.0200, std=0.6586, min=-1.9992, max=1.9591
+ - After clipping (round 4): mu=-0.0200, std=0.6585, min=-1.9958, max=1.9558
+ - After clipping (round 5): mu=-0.0200, std=0.6585, min=-1.9955, max=1.9555
+ - Random Projection: mu=0.0000, std=0.0294
+[Layer 6]
+ - Before clipping: mu=-0.0450, std=0.9611, min=-28.5294, max=7.4912
+ - After clipping (round 1): mu=-0.0257, std=0.6782, min=-2.9282, max=2.8382
+ - After clipping (round 2): mu=-0.0247, std=0.6610, min=-2.0603, max=2.0089
+ - After clipping (round 3): mu=-0.0246, std=0.6595, min=-2.0076, max=1.9582
+ - After clipping (round 4): mu=-0.0246, std=0.6594, min=-2.0031, max=1.9539
+ - After clipping (round 5): mu=-0.0246, std=0.6594, min=-2.0027, max=1.9535
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 7]
+ - Before clipping: mu=-0.0407, std=0.9766, min=-29.8536, max=6.4730
+ - After clipping (round 1): mu=-0.0198, std=0.6521, min=-2.9704, max=2.8890
+ - After clipping (round 2): mu=-0.0187, std=0.6307, min=-1.9762, max=1.9366
+ - After clipping (round 3): mu=-0.0186, std=0.6287, min=-1.9108, max=1.8735
+ - After clipping (round 4): mu=-0.0185, std=0.6285, min=-1.9046, max=1.8674
+ - After clipping (round 5): mu=-0.0185, std=0.6284, min=-1.9039, max=1.8668
+ - Random Projection: mu=0.0000, std=0.0281
+[Layer 8]
+ - Before clipping: mu=-0.0431, std=0.9940, min=-31.0388, max=6.2714
+ - After clipping (round 1): mu=-0.0212, std=0.6201, min=-3.0250, max=2.9389
+ - After clipping (round 2): mu=-0.0195, std=0.5932, min=-1.8814, max=1.8390
+ - After clipping (round 3): mu=-0.0193, std=0.5902, min=-1.7990, max=1.7600
+ - After clipping (round 4): mu=-0.0193, std=0.5898, min=-1.7899, max=1.7513
+ - After clipping (round 5): mu=-0.0193, std=0.5898, min=-1.7888, max=1.7503
+ - Random Projection: mu=0.0000, std=0.0264
+[Layer 9]
+ - Before clipping: mu=-0.0428, std=0.9881, min=-30.7488, max=6.0601
+ - After clipping (round 1): mu=-0.0210, std=0.5901, min=-3.0071, max=2.9214
+ - After clipping (round 2): mu=-0.0192, std=0.5607, min=-1.7913, max=1.7492
+ - After clipping (round 3): mu=-0.0190, std=0.5573, min=-1.7013, max=1.6629
+ - After clipping (round 4): mu=-0.0190, std=0.5569, min=-1.6909, max=1.6530
+ - After clipping (round 5): mu=-0.0190, std=0.5569, min=-1.6897, max=1.6518
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 10]
+ - Before clipping: mu=-0.0364, std=0.9940, min=-30.9297, max=7.2141
+ - After clipping (round 1): mu=-0.0142, std=0.5606, min=-3.0185, max=2.9457
+ - After clipping (round 2): mu=-0.0125, std=0.5285, min=-1.6961, max=1.6677
+ - After clipping (round 3): mu=-0.0122, std=0.5248, min=-1.5981, max=1.5732
+ - After clipping (round 4): mu=-0.0122, std=0.5243, min=-1.5865, max=1.5621
+ - After clipping (round 5): mu=-0.0122, std=0.5242, min=-1.5850, max=1.5607
+ - Random Projection: mu=0.0000, std=0.0234
+[Layer 11]
+ - Before clipping: mu=-0.0338, std=0.9527, min=-29.0816, max=7.1469
+ - After clipping (round 1): mu=-0.0126, std=0.5492, min=-2.8918, max=2.8242
+ - After clipping (round 2): mu=-0.0111, std=0.5193, min=-1.6603, max=1.6350
+ - After clipping (round 3): mu=-0.0109, std=0.5159, min=-1.5691, max=1.5469
+ - After clipping (round 4): mu=-0.0109, std=0.5154, min=-1.5585, max=1.5366
+ - After clipping (round 5): mu=-0.0109, std=0.5154, min=-1.5572, max=1.5354
+ - Random Projection: mu=0.0000, std=0.0230
+[Layer 12]
+ - Before clipping: mu=-0.0435, std=0.9695, min=-29.4357, max=6.7409
+ - After clipping (round 1): mu=-0.0222, std=0.5593, min=-2.9520, max=2.8649
+ - After clipping (round 2): mu=-0.0206, std=0.5289, min=-1.7000, max=1.6556
+ - After clipping (round 3): mu=-0.0204, std=0.5253, min=-1.6074, max=1.5662
+ - After clipping (round 4): mu=-0.0204, std=0.5248, min=-1.5963, max=1.5555
+ - After clipping (round 5): mu=-0.0204, std=0.5248, min=-1.5949, max=1.5541
+ - Random Projection: mu=0.0000, std=0.0235
+[Layer 13]
+ - Before clipping: mu=-0.0439, std=0.9758, min=-29.7043, max=6.0965
+ - After clipping (round 1): mu=-0.0229, std=0.5755, min=-2.9714, max=2.8836
+ - After clipping (round 2): mu=-0.0220, std=0.5502, min=-1.7495, max=1.7037
+ - After clipping (round 3): mu=-0.0218, std=0.5474, min=-1.6725, max=1.6286
+ - After clipping (round 4): mu=-0.0218, std=0.5471, min=-1.6640, max=1.6204
+ - After clipping (round 5): mu=-0.0218, std=0.5470, min=-1.6631, max=1.6195
+ - Random Projection: mu=0.0000, std=0.0245
+[Layer 14]
+ - Before clipping: mu=-0.0427, std=0.9817, min=-30.1987, max=5.5246
+ - After clipping (round 1): mu=-0.0217, std=0.5800, min=-2.9877, max=2.9023
+ - After clipping (round 2): mu=-0.0210, std=0.5574, min=-1.7618, max=1.7185
+ - After clipping (round 3): mu=-0.0209, std=0.5551, min=-1.6932, max=1.6513
+ - After clipping (round 4): mu=-0.0209, std=0.5548, min=-1.6861, max=1.6444
+ - After clipping (round 5): mu=-0.0209, std=0.5548, min=-1.6853, max=1.6436
+ - Random Projection: mu=0.0000, std=0.0248
+[Layer 15]
+ - Before clipping: mu=-0.0420, std=0.9939, min=-28.0650, max=6.0440
+ - After clipping (round 1): mu=-0.0159, std=0.5833, min=-3.0237, max=2.9397
+ - After clipping (round 2): mu=-0.0144, std=0.5587, min=-1.7656, max=1.7339
+ - After clipping (round 3): mu=-0.0143, std=0.5562, min=-1.6905, max=1.6616
+ - After clipping (round 4): mu=-0.0143, std=0.5559, min=-1.6829, max=1.6542
+ - After clipping (round 5): mu=-0.0143, std=0.5559, min=-1.6821, max=1.6535
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 16]
+ - Before clipping: mu=-0.0330, std=0.9991, min=-31.5348, max=6.2676
+ - After clipping (round 1): mu=-0.0043, std=0.5792, min=-3.0302, max=2.9643
+ - After clipping (round 2): mu=-0.0030, std=0.5547, min=-1.7421, max=1.7334
+ - After clipping (round 3): mu=-0.0029, std=0.5523, min=-1.6670, max=1.6610
+ - After clipping (round 4): mu=-0.0029, std=0.5520, min=-1.6596, max=1.6539
+ - After clipping (round 5): mu=-0.0029, std=0.5520, min=-1.6589, max=1.6531
+ - Random Projection: mu=0.0000, std=0.0247
+[Layer 17]
+ - Before clipping: mu=-0.0316, std=0.9754, min=-30.3694, max=6.3288
+ - After clipping (round 1): mu=-0.0036, std=0.5719, min=-2.9576, max=2.8945
+ - After clipping (round 2): mu=-0.0027, std=0.5485, min=-1.7192, max=1.7120
+ - After clipping (round 3): mu=-0.0026, std=0.5463, min=-1.6483, max=1.6430
+ - After clipping (round 4): mu=-0.0026, std=0.5461, min=-1.6416, max=1.6363
+ - After clipping (round 5): mu=-0.0026, std=0.5461, min=-1.6409, max=1.6357
+ - Random Projection: mu=0.0000, std=0.0244
+[Layer 18]
+ - Before clipping: mu=-0.0307, std=0.9732, min=-30.4574, max=5.8205
+ - After clipping (round 1): mu=-0.0034, std=0.5722, min=-2.9503, max=2.8890
+ - After clipping (round 2): mu=-0.0029, std=0.5483, min=-1.7200, max=1.7132
+ - After clipping (round 3): mu=-0.0029, std=0.5460, min=-1.6478, max=1.6421
+ - After clipping (round 4): mu=-0.0029, std=0.5457, min=-1.6408, max=1.6351
+ - After clipping (round 5): mu=-0.0029, std=0.5457, min=-1.6401, max=1.6344
+ - Random Projection: mu=0.0000, std=0.0244
+[Layer 19]
+ - Before clipping: mu=-0.0296, std=0.9603, min=-29.5067, max=5.5068
+ - After clipping (round 1): mu=-0.0033, std=0.5629, min=-2.9107, max=2.8514
+ - After clipping (round 2): mu=-0.0029, std=0.5383, min=-1.6920, max=1.6854
+ - After clipping (round 3): mu=-0.0029, std=0.5359, min=-1.6177, max=1.6118
+ - After clipping (round 4): mu=-0.0029, std=0.5357, min=-1.6106, max=1.6048
+ - After clipping (round 5): mu=-0.0029, std=0.5356, min=-1.6099, max=1.6040
+ - Random Projection: mu=0.0000, std=0.0240
+[Layer 20]
+ - Before clipping: mu=-0.0287, std=0.9453, min=-28.9162, max=5.3101
+ - After clipping (round 1): mu=-0.0036, std=0.5572, min=-2.8645, max=2.8072
+ - After clipping (round 2): mu=-0.0034, std=0.5322, min=-1.6753, max=1.6682
+ - After clipping (round 3): mu=-0.0034, std=0.5299, min=-1.6001, max=1.5934
+ - After clipping (round 4): mu=-0.0034, std=0.5297, min=-1.5931, max=1.5864
+ - After clipping (round 5): mu=-0.0034, std=0.5297, min=-1.5924, max=1.5857
+ - Random Projection: mu=0.0000, std=0.0237
+[Layer 21]
+ - Before clipping: mu=-0.0333, std=0.9890, min=-31.2379, max=5.4510
+ - After clipping (round 1): mu=-0.0072, std=0.5580, min=-3.0004, max=2.9338
+ - After clipping (round 2): mu=-0.0070, std=0.5303, min=-1.6813, max=1.6669
+ - After clipping (round 3): mu=-0.0070, std=0.5276, min=-1.5978, max=1.5838
+ - After clipping (round 4): mu=-0.0070, std=0.5274, min=-1.5899, max=1.5759
+ - After clipping (round 5): mu=-0.0070, std=0.5273, min=-1.5891, max=1.5751
+ - Random Projection: mu=0.0000, std=0.0236
+[Layer 22]
+ - Before clipping: mu=-0.0415, std=1.0062, min=-32.0873, max=5.4948
+ - After clipping (round 1): mu=-0.0150, std=0.5340, min=-3.0600, max=2.9771
+ - After clipping (round 2): mu=-0.0146, std=0.5050, min=-1.6170, max=1.5871
+ - After clipping (round 3): mu=-0.0146, std=0.5023, min=-1.5296, max=1.5004
+ - After clipping (round 4): mu=-0.0146, std=0.5020, min=-1.5214, max=1.4922
+ - After clipping (round 5): mu=-0.0146, std=0.5020, min=-1.5206, max=1.4914
+ - Random Projection: mu=0.0000, std=0.0224
+[Layer 23]
+ - Before clipping: mu=-0.0311, std=1.0090, min=-32.3885, max=5.4854
+ - After clipping (round 1): mu=-0.0051, std=0.5325, min=-3.0579, max=2.9958
+ - After clipping (round 2): mu=-0.0047, std=0.5036, min=-1.6027, max=1.5925
+ - After clipping (round 3): mu=-0.0048, std=0.5008, min=-1.5156, max=1.5061
+ - After clipping (round 4): mu=-0.0048, std=0.5005, min=-1.5071, max=1.4976
+ - After clipping (round 5): mu=-0.0048, std=0.5005, min=-1.5063, max=1.4966
+ - Random Projection: mu=0.0000, std=0.0224
+Random projections initialized.
+[# API Calls 50] loss: 1.4448. Current perf: 0.3958. Best perf so far: 0.4583
+[# API Calls 100] loss: 1.399. Current perf: 0.4375. Best perf so far: 0.4583
+********* Evaluated on dev set *********
+Dev loss: 1.5158. Dev perf: 0.3542. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 150] loss: 1.3389. Current perf: 0.375. Best perf so far: 0.4583
+[# API Calls 200] loss: 1.3206. Current perf: 0.4167. Best perf so far: 0.4583
+********* Evaluated on dev set *********
+Dev loss: 1.454. Dev perf: 0.3333. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 250] loss: 1.2294. Current perf: 0.4167. Best perf so far: 0.4792
+[# API Calls 300] loss: 1.2167. Current perf: 0.4375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.346. Dev perf: 0.3542. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 350] loss: 1.1601. Current perf: 0.3958. Best perf so far: 0.4792
+[# API Calls 400] loss: 1.1204. Current perf: 0.4167. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.26. Dev perf: 0.3333. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 450] loss: 1.0662. Current perf: 0.4375. Best perf so far: 0.4792
+[# API Calls 500] loss: 1.0465. Current perf: 0.4583. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.2105. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 550] loss: 1.0211. Current perf: 0.4375. Best perf so far: 0.5208
+[# API Calls 600] loss: 1.0174. Current perf: 0.4792. Best perf so far: 0.5208
+********* Evaluated on dev set *********
+Dev loss: 1.1988. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 650] loss: 0.998. Current perf: 0.4375. Best perf so far: 0.5208
+[# API Calls 700] loss: 0.99. Current perf: 0.4792. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.1751. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 750] loss: 0.979. Current perf: 0.5625. Best perf so far: 0.5833
+[# API Calls 800] loss: 0.9726. Current perf: 0.5417. Best perf so far: 0.5833
+********* Evaluated on dev set *********
+Dev loss: 1.1803. Dev perf: 0.375. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 850] loss: 0.9683. Current perf: 0.5417. Best perf so far: 0.6042
+[# API Calls 900] loss: 0.9538. Current perf: 0.4792. Best perf so far: 0.6042
+********* Evaluated on dev set *********
+Dev loss: 1.1594. Dev perf: 0.3958. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 950] loss: 0.948. Current perf: 0.5208. Best perf so far: 0.6042
+[# API Calls 1000] loss: 0.9425. Current perf: 0.5208. Best perf so far: 0.6042
+********* Evaluated on dev set *********
+Dev loss: 1.1429. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 1050] loss: 0.941. Current perf: 0.5625. Best perf so far: 0.625
+[# API Calls 1100] loss: 0.9461. Current perf: 0.5833. Best perf so far: 0.6458
+********* Evaluated on dev set *********
+Dev loss: 1.1125. Dev perf: 0.4792. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1150] loss: 0.9386. Current perf: 0.5. Best perf so far: 0.6458
+[# API Calls 1200] loss: 0.9315. Current perf: 0.6042. Best perf so far: 0.6458
+********* Evaluated on dev set *********
+Dev loss: 1.1723. Dev perf: 0.4375. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1250] loss: 0.9114. Current perf: 0.5417. Best perf so far: 0.6667
+[# API Calls 1300] loss: 0.9145. Current perf: 0.6042. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1558. Dev perf: 0.4583. Best dev perf: 0.4792
+********* Done *********
+[# API Calls 1350] loss: 0.8983. Current perf: 0.5417. Best perf so far: 0.6667
+[# API Calls 1400] loss: 0.8983. Current perf: 0.5625. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.156. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1450] loss: 0.8951. Current perf: 0.6042. Best perf so far: 0.6667
+[# API Calls 1500] loss: 0.8845. Current perf: 0.6042. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1296. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1550] loss: 0.8928. Current perf: 0.5833. Best perf so far: 0.6875
+[# API Calls 1600] loss: 0.8821. Current perf: 0.6875. Best perf so far: 0.7083
+********* Evaluated on dev set *********
+Dev loss: 1.1313. Dev perf: 0.5. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1650] loss: 0.8776. Current perf: 0.5625. Best perf so far: 0.7083
+[# API Calls 1700] loss: 0.8613. Current perf: 0.6667. Best perf so far: 0.75
+********* Evaluated on dev set *********
+Dev loss: 1.1248. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1750] loss: 0.8598. Current perf: 0.5625. Best perf so far: 0.75
+[# API Calls 1800] loss: 0.8575. Current perf: 0.6667. Best perf so far: 0.75
+********* Evaluated on dev set *********
+Dev loss: 1.1303. Dev perf: 0.3542. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1850] loss: 0.8428. Current perf: 0.6875. Best perf so far: 0.7708
+[# API Calls 1900] loss: 0.8373. Current perf: 0.6875. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.1084. Dev perf: 0.5417. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 1950] loss: 0.8341. Current perf: 0.75. Best perf so far: 0.7708
+[# API Calls 2000] loss: 0.8378. Current perf: 0.6875. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.1338. Dev perf: 0.4583. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2050] loss: 0.825. Current perf: 0.6875. Best perf so far: 0.7708
+[# API Calls 2100] loss: 0.8276. Current perf: 0.6875. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.1036. Dev perf: 0.5. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2150] loss: 0.8155. Current perf: 0.6667. Best perf so far: 0.7708
+[# API Calls 2200] loss: 0.8091. Current perf: 0.6875. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.0784. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2250] loss: 0.7979. Current perf: 0.6875. Best perf so far: 0.7708
+[# API Calls 2300] loss: 0.787. Current perf: 0.7708. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0747. Dev perf: 0.4792. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2350] loss: 0.7819. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 2400] loss: 0.7856. Current perf: 0.6667. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0728. Dev perf: 0.4792. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2450] loss: 0.7798. Current perf: 0.7292. Best perf so far: 0.7917
+[# API Calls 2500] loss: 0.7859. Current perf: 0.7292. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0379. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2550] loss: 0.7795. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 2600] loss: 0.782. Current perf: 0.7083. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0522. Dev perf: 0.4792. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2650] loss: 0.7476. Current perf: 0.8125. Best perf so far: 0.8125
+[# API Calls 2700] loss: 0.7519. Current perf: 0.7708. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0917. Dev perf: 0.5. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2750] loss: 0.7324. Current perf: 0.8125. Best perf so far: 0.8542
+[# API Calls 2800] loss: 0.7233. Current perf: 0.7917. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0654. Dev perf: 0.5. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2850] loss: 0.7127. Current perf: 0.8333. Best perf so far: 0.8542
+[# API Calls 2900] loss: 0.7243. Current perf: 0.8125. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0846. Dev perf: 0.4792. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 2950] loss: 0.7423. Current perf: 0.7292. Best perf so far: 0.8542
+[# API Calls 3000] loss: 0.7266. Current perf: 0.7292. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.1019. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3050] loss: 0.7241. Current perf: 0.8125. Best perf so far: 0.8542
+[# API Calls 3100] loss: 0.7107. Current perf: 0.7917. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0723. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3150] loss: 0.7154. Current perf: 0.7708. Best perf so far: 0.8542
+[# API Calls 3200] loss: 0.7071. Current perf: 0.75. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.057. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3250] loss: 0.7018. Current perf: 0.7917. Best perf so far: 0.8542
+[# API Calls 3300] loss: 0.6965. Current perf: 0.7708. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0676. Dev perf: 0.5417. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3350] loss: 0.6835. Current perf: 0.8125. Best perf so far: 0.8542
+[# API Calls 3400] loss: 0.694. Current perf: 0.7708. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0597. Dev perf: 0.5417. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3450] loss: 0.6672. Current perf: 0.8333. Best perf so far: 0.8542
+[# API Calls 3500] loss: 0.6659. Current perf: 0.75. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.0533. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3550] loss: 0.653. Current perf: 0.8125. Best perf so far: 0.8542
+[# API Calls 3600] loss: 0.6635. Current perf: 0.8542. Best perf so far: 0.8958
+********* Evaluated on dev set *********
+Dev loss: 1.069. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3650] loss: 0.6586. Current perf: 0.7917. Best perf so far: 0.9375
+[# API Calls 3700] loss: 0.6294. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0769. Dev perf: 0.5625. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3750] loss: 0.6166. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 3800] loss: 0.6151. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0787. Dev perf: 0.5417. Best dev perf: 0.5625
+********* Done *********
+[# API Calls 3850] loss: 0.6164. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 3900] loss: 0.6135. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1151. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 3950] loss: 0.6157. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4000] loss: 0.6096. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0623. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4050] loss: 0.6093. Current perf: 0.8125. Best perf so far: 0.9375
+[# API Calls 4100] loss: 0.6054. Current perf: 0.8125. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0735. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4150] loss: 0.606. Current perf: 0.8125. Best perf so far: 0.9375
+[# API Calls 4200] loss: 0.5876. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1069. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4250] loss: 0.5721. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 4300] loss: 0.5744. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0888. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4350] loss: 0.5658. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 4400] loss: 0.5695. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0713. Dev perf: 0.5208. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4450] loss: 0.5915. Current perf: 0.8125. Best perf so far: 0.9375
+[# API Calls 4500] loss: 0.5777. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1184. Dev perf: 0.5208. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4550] loss: 0.5635. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4600] loss: 0.5534. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.134. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4650] loss: 0.5474. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4700] loss: 0.5393. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1685. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4750] loss: 0.5208. Current perf: 0.9167. Best perf so far: 0.9375
+[# API Calls 4800] loss: 0.5047. Current perf: 0.9375. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1523. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4850] loss: 0.4934. Current perf: 0.9167. Best perf so far: 0.9375
+[# API Calls 4900] loss: 0.5142. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0992. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4950] loss: 0.5171. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 5000] loss: 0.5035. Current perf: 0.9167. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1309. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 5050] loss: 0.5021. Current perf: 0.8958. Best perf so far: 0.9375
+[# API Calls 5100] loss: 0.469. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.101. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 5150] loss: 0.4721. Current perf: 0.9375. Best perf so far: 0.9583
+[# API Calls 5200] loss: 0.4679. Current perf: 0.9375. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0799. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 5250] loss: 0.4582. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 5300] loss: 0.4538. Current perf: 0.8958. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0789. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 5350] loss: 0.4489. Current perf: 0.9167. Best perf so far: 0.9583
+[# API Calls 5400] loss: 0.4778. Current perf: 0.875. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.1182. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 5450] loss: 0.4635. Current perf: 0.8542. Best perf so far: 0.9583
+[# API Calls 5500] loss: 0.4637. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.1061. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5550] loss: 0.4544. Current perf: 0.9167. Best perf so far: 0.9583
+[# API Calls 5600] loss: 0.4467. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.1004. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5650] loss: 0.464. Current perf: 0.8125. Best perf so far: 0.9792
+[# API Calls 5700] loss: 0.4423. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0832. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5750] loss: 0.4318. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5800] loss: 0.4296. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1174. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5850] loss: 0.4453. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 5900] loss: 0.4598. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1708. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5950] loss: 0.4436. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6000] loss: 0.444. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1525. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6050] loss: 0.4388. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6100] loss: 0.431. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1639. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6150] loss: 0.4369. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 6200] loss: 0.4157. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1912. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6250] loss: 0.4081. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6300] loss: 0.4203. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1391. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6350] loss: 0.4178. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 6400] loss: 0.4272. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2423. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6450] loss: 0.426. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 6500] loss: 0.4344. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.134. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6550] loss: 0.4263. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 6600] loss: 0.4194. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1394. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6650] loss: 0.3998. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6700] loss: 0.3944. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1504. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6750] loss: 0.3833. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6800] loss: 0.3808. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.1863. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6850] loss: 0.3645. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 6900] loss: 0.3894. Current perf: 0.9167. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.2844. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6950] loss: 0.3757. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 7000] loss: 0.3595. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.1362. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7050] loss: 0.3524. Current perf: 0.9375. Best perf so far: 1.0
+[# API Calls 7100] loss: 0.3795. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.2067. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7150] loss: 0.3285. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 7200] loss: 0.3278. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.1944. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7250] loss: 0.3639. Current perf: 0.9792. Best perf so far: 1.0
+[# API Calls 7300] loss: 0.3591. Current perf: 1.0. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.2216. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7350] loss: 0.3638. Current perf: 0.9167. Best perf so far: 1.0
+[# API Calls 7400] loss: 0.3599. Current perf: 0.9375. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.1986. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7450] loss: 0.384. Current perf: 0.8542. Best perf so far: 1.0
+[# API Calls 7500] loss: 0.3545. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.2051. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7550] loss: 0.3084. Current perf: 0.9583. Best perf so far: 1.0
+[# API Calls 7600] loss: 0.3158. Current perf: 0.9583. Best perf so far: 1.0
+********* Evaluated on dev set *********
+Dev loss: 1.1585. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7650] loss: 0.3105. Current perf: 1.0. Best perf so far: 1.0
+Done. Elapsed time: 43.591826260089874 (mins)
+===== seed: 42 finished! =====
+===== seed: 50 start! =====
+/data/qingyang/anaconda3/envs/bbt/lib/python3.8/site-packages/cma/s.py:13: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 81.14ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 4577.79ex/s]
+{'text1': 'Two couples, two men and two women, dancing on a stage wearing all yellow.', 'text2': 'People are performing a show on stage.', 'labels': 1, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . Two couples, two men and two women, dancing on a stage wearing all yellow. ? <mask> , People are performing a show on stage.", 'target_text': 'Maybe'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 25.41ba/s]
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 667.88ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 4601.86ex/s]
+{'text1': 'The woman is wearing a purple shirt and red sunglasses while her friend wears an orange shirt.', 'text2': 'The woman in purple is not wearing sunglasses.', 'labels': 2, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . The woman is wearing a purple shirt and red sunglasses while her friend wears an orange shirt. ? <mask> , The woman in purple is not wearing sunglasses.", 'target_text': 'No'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 29.50ba/s]
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at roberta-large and are newly initialized: ['lm_head.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+# of train data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 70       | 14541  |
++------------------------+------------------------+----------+--------+
+
+# of dev data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 71       | 3084   |
++------------------------+------------------------+----------+--------+
+[Embedding] mu: -0.018104109913110733 | std: 0.13582643866539001 [RandProj]  mu: 0.0 | std: 0.006074342999950358
+Calculating std for random projections...
+[Layer 1]
+ - Before clipping: mu=-0.0084, std=0.8499, min=-16.1114, max=17.4812
+ - After clipping (round 1): mu=-0.0066, std=0.7117, min=-2.5581, max=2.5413
+ - After clipping (round 2): mu=-0.0059, std=0.7046, min=-2.1418, max=2.1286
+ - After clipping (round 3): mu=-0.0059, std=0.7042, min=-2.1198, max=2.1079
+ - After clipping (round 4): mu=-0.0059, std=0.7041, min=-2.1184, max=2.1066
+ - After clipping (round 5): mu=-0.0059, std=0.7041, min=-2.1183, max=2.1065
+ - Random Projection: mu=0.0000, std=0.0315
+[Layer 2]
+ - Before clipping: mu=-0.0298, std=0.8798, min=-19.9544, max=16.1508
+ - After clipping (round 1): mu=-0.0193, std=0.6814, min=-2.6690, max=2.6095
+ - After clipping (round 2): mu=-0.0188, std=0.6696, min=-2.0635, max=2.0248
+ - After clipping (round 3): mu=-0.0187, std=0.6687, min=-2.0276, max=1.9901
+ - After clipping (round 4): mu=-0.0187, std=0.6686, min=-2.0248, max=1.9873
+ - After clipping (round 5): mu=-0.0187, std=0.6686, min=-2.0246, max=1.9871
+ - Random Projection: mu=0.0000, std=0.0299
+[Layer 3]
+ - Before clipping: mu=-0.0321, std=0.9154, min=-21.1032, max=15.0254
+ - After clipping (round 1): mu=-0.0187, std=0.6748, min=-2.7783, max=2.7142
+ - After clipping (round 2): mu=-0.0183, std=0.6607, min=-2.0431, max=2.0057
+ - After clipping (round 3): mu=-0.0183, std=0.6597, min=-2.0005, max=1.9639
+ - After clipping (round 4): mu=-0.0183, std=0.6596, min=-1.9973, max=1.9608
+ - After clipping (round 5): mu=-0.0183, std=0.6596, min=-1.9970, max=1.9605
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 4]
+ - Before clipping: mu=-0.0354, std=0.9236, min=-25.4517, max=11.2182
+ - After clipping (round 1): mu=-0.0199, std=0.6878, min=-2.8062, max=2.7353
+ - After clipping (round 2): mu=-0.0193, std=0.6749, min=-2.0832, max=2.0434
+ - After clipping (round 3): mu=-0.0193, std=0.6740, min=-2.0441, max=2.0054
+ - After clipping (round 4): mu=-0.0193, std=0.6739, min=-2.0412, max=2.0026
+ - After clipping (round 5): mu=-0.0193, std=0.6739, min=-2.0410, max=2.0024
+ - Random Projection: mu=0.0000, std=0.0301
+[Layer 5]
+ - Before clipping: mu=-0.0390, std=0.9437, min=-26.9672, max=8.6413
+ - After clipping (round 1): mu=-0.0211, std=0.6790, min=-2.8702, max=2.7921
+ - After clipping (round 2): mu=-0.0202, std=0.6645, min=-2.0580, max=2.0158
+ - After clipping (round 3): mu=-0.0202, std=0.6634, min=-2.0138, max=1.9733
+ - After clipping (round 4): mu=-0.0202, std=0.6634, min=-2.0105, max=1.9701
+ - After clipping (round 5): mu=-0.0202, std=0.6633, min=-2.0102, max=1.9699
+ - Random Projection: mu=0.0000, std=0.0297
+[Layer 6]
+ - Before clipping: mu=-0.0450, std=0.9613, min=-28.5348, max=6.9353
+ - After clipping (round 1): mu=-0.0259, std=0.6826, min=-2.9290, max=2.8389
+ - After clipping (round 2): mu=-0.0250, std=0.6659, min=-2.0737, max=2.0219
+ - After clipping (round 3): mu=-0.0249, std=0.6645, min=-2.0227, max=1.9728
+ - After clipping (round 4): mu=-0.0249, std=0.6644, min=-2.0184, max=1.9687
+ - After clipping (round 5): mu=-0.0249, std=0.6644, min=-2.0180, max=1.9683
+ - Random Projection: mu=0.0000, std=0.0297
+[Layer 7]
+ - Before clipping: mu=-0.0407, std=0.9767, min=-29.8370, max=6.4782
+ - After clipping (round 1): mu=-0.0199, std=0.6523, min=-2.9707, max=2.8892
+ - After clipping (round 2): mu=-0.0188, std=0.6310, min=-1.9767, max=1.9369
+ - After clipping (round 3): mu=-0.0188, std=0.6290, min=-1.9119, max=1.8742
+ - After clipping (round 4): mu=-0.0187, std=0.6288, min=-1.9058, max=1.8683
+ - After clipping (round 5): mu=-0.0187, std=0.6288, min=-1.9052, max=1.8677
+ - Random Projection: mu=0.0000, std=0.0281
+[Layer 8]
+ - Before clipping: mu=-0.0431, std=0.9943, min=-31.0977, max=6.2756
+ - After clipping (round 1): mu=-0.0214, std=0.6193, min=-3.0261, max=2.9398
+ - After clipping (round 2): mu=-0.0198, std=0.5927, min=-1.8792, max=1.8364
+ - After clipping (round 3): mu=-0.0196, std=0.5898, min=-1.7980, max=1.7584
+ - After clipping (round 4): mu=-0.0196, std=0.5895, min=-1.7891, max=1.7498
+ - After clipping (round 5): mu=-0.0196, std=0.5894, min=-1.7881, max=1.7488
+ - Random Projection: mu=0.0000, std=0.0264
+[Layer 9]
+ - Before clipping: mu=-0.0429, std=0.9881, min=-30.7228, max=6.1137
+ - After clipping (round 1): mu=-0.0213, std=0.5944, min=-3.0071, max=2.9214
+ - After clipping (round 2): mu=-0.0196, std=0.5655, min=-1.8044, max=1.7617
+ - After clipping (round 3): mu=-0.0194, std=0.5622, min=-1.7162, max=1.6770
+ - After clipping (round 4): mu=-0.0194, std=0.5618, min=-1.7061, max=1.6672
+ - After clipping (round 5): mu=-0.0194, std=0.5618, min=-1.7049, max=1.6661
+ - Random Projection: mu=0.0000, std=0.0251
+[Layer 10]
+ - Before clipping: mu=-0.0365, std=0.9940, min=-30.8116, max=7.0413
+ - After clipping (round 1): mu=-0.0145, std=0.5656, min=-3.0186, max=2.9456
+ - After clipping (round 2): mu=-0.0129, std=0.5339, min=-1.7112, max=1.6822
+ - After clipping (round 3): mu=-0.0126, std=0.5302, min=-1.6145, max=1.5888
+ - After clipping (round 4): mu=-0.0126, std=0.5297, min=-1.6032, max=1.5779
+ - After clipping (round 5): mu=-0.0126, std=0.5297, min=-1.6018, max=1.5766
+ - Random Projection: mu=0.0000, std=0.0237
+[Layer 11]
+ - Before clipping: mu=-0.0339, std=0.9530, min=-29.0461, max=6.7571
+ - After clipping (round 1): mu=-0.0129, std=0.5527, min=-2.8929, max=2.8251
+ - After clipping (round 2): mu=-0.0114, std=0.5231, min=-1.6710, max=1.6451
+ - After clipping (round 3): mu=-0.0112, std=0.5197, min=-1.5806, max=1.5578
+ - After clipping (round 4): mu=-0.0112, std=0.5192, min=-1.5702, max=1.5478
+ - After clipping (round 5): mu=-0.0112, std=0.5192, min=-1.5689, max=1.5465
+ - Random Projection: mu=0.0000, std=0.0232
+[Layer 12]
+ - Before clipping: mu=-0.0436, std=0.9697, min=-29.7918, max=6.4632
+ - After clipping (round 1): mu=-0.0224, std=0.5629, min=-2.9527, max=2.8655
+ - After clipping (round 2): mu=-0.0209, std=0.5330, min=-1.7111, max=1.6662
+ - After clipping (round 3): mu=-0.0207, std=0.5295, min=-1.6200, max=1.5782
+ - After clipping (round 4): mu=-0.0207, std=0.5291, min=-1.6093, max=1.5679
+ - After clipping (round 5): mu=-0.0207, std=0.5290, min=-1.6079, max=1.5666
+ - Random Projection: mu=0.0000, std=0.0237
+[Layer 13]
+ - Before clipping: mu=-0.0439, std=0.9759, min=-29.9872, max=6.0733
+ - After clipping (round 1): mu=-0.0231, std=0.5781, min=-2.9715, max=2.8838
+ - After clipping (round 2): mu=-0.0223, std=0.5531, min=-1.7573, max=1.7111
+ - After clipping (round 3): mu=-0.0221, std=0.5504, min=-1.6815, max=1.6370
+ - After clipping (round 4): mu=-0.0221, std=0.5501, min=-1.6733, max=1.6290
+ - After clipping (round 5): mu=-0.0221, std=0.5501, min=-1.6724, max=1.6281
+ - Random Projection: mu=0.0000, std=0.0246
+[Layer 14]
+ - Before clipping: mu=-0.0427, std=0.9818, min=-30.1933, max=5.4625
+ - After clipping (round 1): mu=-0.0218, std=0.5824, min=-2.9881, max=2.9027
+ - After clipping (round 2): mu=-0.0213, std=0.5601, min=-1.7690, max=1.7254
+ - After clipping (round 3): mu=-0.0212, std=0.5579, min=-1.7017, max=1.6592
+ - After clipping (round 4): mu=-0.0212, std=0.5577, min=-1.6950, max=1.6526
+ - After clipping (round 5): mu=-0.0212, std=0.5577, min=-1.6943, max=1.6520
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 15]
+ - Before clipping: mu=-0.0420, std=0.9937, min=-28.0950, max=5.8980
+ - After clipping (round 1): mu=-0.0159, std=0.5854, min=-3.0230, max=2.9391
+ - After clipping (round 2): mu=-0.0145, std=0.5611, min=-1.7722, max=1.7404
+ - After clipping (round 3): mu=-0.0144, std=0.5588, min=-1.6979, max=1.6689
+ - After clipping (round 4): mu=-0.0144, std=0.5585, min=-1.6907, max=1.6619
+ - After clipping (round 5): mu=-0.0144, std=0.5585, min=-1.6900, max=1.6612
+ - Random Projection: mu=0.0000, std=0.0250
+[Layer 16]
+ - Before clipping: mu=-0.0330, std=0.9991, min=-31.5359, max=6.1674
+ - After clipping (round 1): mu=-0.0045, std=0.5824, min=-3.0303, max=2.9643
+ - After clipping (round 2): mu=-0.0031, std=0.5581, min=-1.7518, max=1.7429
+ - After clipping (round 3): mu=-0.0030, std=0.5558, min=-1.6775, max=1.6713
+ - After clipping (round 4): mu=-0.0030, std=0.5555, min=-1.6703, max=1.6644
+ - After clipping (round 5): mu=-0.0030, std=0.5555, min=-1.6696, max=1.6637
+ - Random Projection: mu=0.0000, std=0.0248
+[Layer 17]
+ - Before clipping: mu=-0.0316, std=0.9755, min=-30.3690, max=6.1223
+ - After clipping (round 1): mu=-0.0037, std=0.5740, min=-2.9581, max=2.8950
+ - After clipping (round 2): mu=-0.0027, std=0.5509, min=-1.7258, max=1.7183
+ - After clipping (round 3): mu=-0.0027, std=0.5487, min=-1.6554, max=1.6499
+ - After clipping (round 4): mu=-0.0027, std=0.5485, min=-1.6487, max=1.6434
+ - After clipping (round 5): mu=-0.0027, std=0.5484, min=-1.6481, max=1.6427
+ - Random Projection: mu=0.0000, std=0.0245
+[Layer 18]
+ - Before clipping: mu=-0.0307, std=0.9736, min=-30.4364, max=5.7036
+ - After clipping (round 1): mu=-0.0035, std=0.5767, min=-2.9513, max=2.8900
+ - After clipping (round 2): mu=-0.0030, std=0.5533, min=-1.7337, max=1.7267
+ - After clipping (round 3): mu=-0.0030, std=0.5511, min=-1.6629, max=1.6569
+ - After clipping (round 4): mu=-0.0030, std=0.5508, min=-1.6561, max=1.6502
+ - After clipping (round 5): mu=-0.0030, std=0.5508, min=-1.6555, max=1.6495
+ - Random Projection: mu=0.0000, std=0.0246
+[Layer 19]
+ - Before clipping: mu=-0.0296, std=0.9607, min=-29.5024, max=5.3112
+ - After clipping (round 1): mu=-0.0034, std=0.5655, min=-2.9118, max=2.8525
+ - After clipping (round 2): mu=-0.0029, std=0.5413, min=-1.7000, max=1.6932
+ - After clipping (round 3): mu=-0.0029, std=0.5390, min=-1.6268, max=1.6209
+ - After clipping (round 4): mu=-0.0029, std=0.5387, min=-1.6198, max=1.6140
+ - After clipping (round 5): mu=-0.0029, std=0.5387, min=-1.6191, max=1.6133
+ - Random Projection: mu=0.0000, std=0.0241
+[Layer 20]
+ - Before clipping: mu=-0.0287, std=0.9456, min=-28.9135, max=5.2066
+ - After clipping (round 1): mu=-0.0036, std=0.5591, min=-2.8654, max=2.8081
+ - After clipping (round 2): mu=-0.0033, std=0.5345, min=-1.6809, max=1.6737
+ - After clipping (round 3): mu=-0.0033, std=0.5322, min=-1.6067, max=1.6002
+ - After clipping (round 4): mu=-0.0033, std=0.5320, min=-1.5999, max=1.5933
+ - After clipping (round 5): mu=-0.0033, std=0.5319, min=-1.5992, max=1.5926
+ - Random Projection: mu=0.0000, std=0.0238
+[Layer 21]
+ - Before clipping: mu=-0.0333, std=0.9891, min=-31.2374, max=5.2025
+ - After clipping (round 1): mu=-0.0073, std=0.5614, min=-3.0006, max=2.9341
+ - After clipping (round 2): mu=-0.0070, std=0.5341, min=-1.6914, max=1.6768
+ - After clipping (round 3): mu=-0.0070, std=0.5316, min=-1.6094, max=1.5954
+ - After clipping (round 4): mu=-0.0070, std=0.5313, min=-1.6016, max=1.5877
+ - After clipping (round 5): mu=-0.0070, std=0.5313, min=-1.6009, max=1.5869
+ - Random Projection: mu=0.0000, std=0.0238
+[Layer 22]
+ - Before clipping: mu=-0.0415, std=1.0061, min=-32.0826, max=5.0690
+ - After clipping (round 1): mu=-0.0151, std=0.5403, min=-3.0597, max=2.9768
+ - After clipping (round 2): mu=-0.0146, std=0.5121, min=-1.6359, max=1.6057
+ - After clipping (round 3): mu=-0.0146, std=0.5095, min=-1.5509, max=1.5216
+ - After clipping (round 4): mu=-0.0146, std=0.5092, min=-1.5431, max=1.5138
+ - After clipping (round 5): mu=-0.0146, std=0.5092, min=-1.5423, max=1.5130
+ - Random Projection: mu=0.0000, std=0.0228
+[Layer 23]
+ - Before clipping: mu=-0.0311, std=1.0087, min=-32.3886, max=5.3825
+ - After clipping (round 1): mu=-0.0052, std=0.5430, min=-3.0571, max=2.9949
+ - After clipping (round 2): mu=-0.0049, std=0.5152, min=-1.6342, max=1.6237
+ - After clipping (round 3): mu=-0.0050, std=0.5126, min=-1.5506, max=1.5408
+ - After clipping (round 4): mu=-0.0050, std=0.5124, min=-1.5428, max=1.5329
+ - After clipping (round 5): mu=-0.0050, std=0.5123, min=-1.5420, max=1.5321
+ - Random Projection: mu=0.0000, std=0.0229
+Random projections initialized.
+[# API Calls 50] loss: 1.4344. Current perf: 0.4583. Best perf so far: 0.4792
+[# API Calls 100] loss: 1.4195. Current perf: 0.4375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.4738. Dev perf: 0.3542. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 150] loss: 1.3334. Current perf: 0.4792. Best perf so far: 0.4792
+[# API Calls 200] loss: 1.3163. Current perf: 0.4583. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.3778. Dev perf: 0.3542. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 250] loss: 1.2546. Current perf: 0.4792. Best perf so far: 0.4792
+[# API Calls 300] loss: 1.2094. Current perf: 0.4583. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.3037. Dev perf: 0.3542. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 350] loss: 1.1334. Current perf: 0.4792. Best perf so far: 0.4792
+[# API Calls 400] loss: 1.0917. Current perf: 0.4792. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.2079. Dev perf: 0.3333. Best dev perf: 0.3542
+********* Done *********
+[# API Calls 450] loss: 1.039. Current perf: 0.4792. Best perf so far: 0.5417
+[# API Calls 500] loss: 1.0156. Current perf: 0.4792. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.1659. Dev perf: 0.4167. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 550] loss: 1.0162. Current perf: 0.4792. Best perf so far: 0.5625
+[# API Calls 600] loss: 0.9878. Current perf: 0.5. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.1764. Dev perf: 0.3958. Best dev perf: 0.4167
+********* Done *********
+[# API Calls 650] loss: 0.9575. Current perf: 0.5417. Best perf so far: 0.6042
+[# API Calls 700] loss: 0.9608. Current perf: 0.5. Best perf so far: 0.6042
+********* Evaluated on dev set *********
+Dev loss: 1.131. Dev perf: 0.4375. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 750] loss: 0.9517. Current perf: 0.5208. Best perf so far: 0.6042
+[# API Calls 800] loss: 0.9542. Current perf: 0.5208. Best perf so far: 0.6042
+********* Evaluated on dev set *********
+Dev loss: 1.13. Dev perf: 0.4167. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 850] loss: 0.9417. Current perf: 0.5625. Best perf so far: 0.6042
+[# API Calls 900] loss: 0.9213. Current perf: 0.6042. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1222. Dev perf: 0.375. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 950] loss: 0.9107. Current perf: 0.6458. Best perf so far: 0.6667
+[# API Calls 1000] loss: 0.9175. Current perf: 0.6458. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.1047. Dev perf: 0.3958. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 1050] loss: 0.9028. Current perf: 0.6458. Best perf so far: 0.6875
+[# API Calls 1100] loss: 0.8866. Current perf: 0.625. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.0832. Dev perf: 0.5208. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1150] loss: 0.8878. Current perf: 0.6042. Best perf so far: 0.6875
+[# API Calls 1200] loss: 0.8869. Current perf: 0.6667. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.1035. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1250] loss: 0.8769. Current perf: 0.6667. Best perf so far: 0.6875
+[# API Calls 1300] loss: 0.8821. Current perf: 0.625. Best perf so far: 0.7083
+********* Evaluated on dev set *********
+Dev loss: 1.1163. Dev perf: 0.4167. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1350] loss: 0.8621. Current perf: 0.6667. Best perf so far: 0.7292
+[# API Calls 1400] loss: 0.874. Current perf: 0.6667. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.1256. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1450] loss: 0.8687. Current perf: 0.6667. Best perf so far: 0.7292
+[# API Calls 1500] loss: 0.8681. Current perf: 0.6458. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.1366. Dev perf: 0.375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1550] loss: 0.8713. Current perf: 0.6667. Best perf so far: 0.7292
+[# API Calls 1600] loss: 0.8602. Current perf: 0.5833. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0749. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1650] loss: 0.8443. Current perf: 0.6458. Best perf so far: 0.7292
+[# API Calls 1700] loss: 0.8449. Current perf: 0.6667. Best perf so far: 0.75
+********* Evaluated on dev set *********
+Dev loss: 1.1185. Dev perf: 0.4167. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1750] loss: 0.8221. Current perf: 0.6875. Best perf so far: 0.75
+[# API Calls 1800] loss: 0.8225. Current perf: 0.7083. Best perf so far: 0.75
+********* Evaluated on dev set *********
+Dev loss: 1.0941. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1850] loss: 0.8053. Current perf: 0.75. Best perf so far: 0.75
+[# API Calls 1900] loss: 0.7949. Current perf: 0.7292. Best perf so far: 0.75
+********* Evaluated on dev set *********
+Dev loss: 1.1082. Dev perf: 0.4583. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 1950] loss: 0.7984. Current perf: 0.7083. Best perf so far: 0.75
+[# API Calls 2000] loss: 0.8007. Current perf: 0.7083. Best perf so far: 0.7708
+********* Evaluated on dev set *********
+Dev loss: 1.1411. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2050] loss: 0.7983. Current perf: 0.6458. Best perf so far: 0.8125
+[# API Calls 2100] loss: 0.7843. Current perf: 0.7917. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0868. Dev perf: 0.4792. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2150] loss: 0.7662. Current perf: 0.7083. Best perf so far: 0.8125
+[# API Calls 2200] loss: 0.7576. Current perf: 0.7708. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0765. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2250] loss: 0.753. Current perf: 0.7083. Best perf so far: 0.8125
+[# API Calls 2300] loss: 0.7404. Current perf: 0.7708. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.1174. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2350] loss: 0.7285. Current perf: 0.7917. Best perf so far: 0.8125
+[# API Calls 2400] loss: 0.7213. Current perf: 0.7708. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0854. Dev perf: 0.4167. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2450] loss: 0.7093. Current perf: 0.7292. Best perf so far: 0.8125
+[# API Calls 2500] loss: 0.7011. Current perf: 0.75. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.1389. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2550] loss: 0.6968. Current perf: 0.7708. Best perf so far: 0.8333
+[# API Calls 2600] loss: 0.6873. Current perf: 0.7917. Best perf so far: 0.8333
+********* Evaluated on dev set *********
+Dev loss: 1.1084. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2650] loss: 0.6738. Current perf: 0.7708. Best perf so far: 0.8542
+[# API Calls 2700] loss: 0.6725. Current perf: 0.8125. Best perf so far: 0.8542
+********* Evaluated on dev set *********
+Dev loss: 1.1444. Dev perf: 0.3958. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2750] loss: 0.674. Current perf: 0.6875. Best perf so far: 0.875
+[# API Calls 2800] loss: 0.6674. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1551. Dev perf: 0.375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2850] loss: 0.659. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 2900] loss: 0.658. Current perf: 0.8125. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1832. Dev perf: 0.3333. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 2950] loss: 0.6749. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 3000] loss: 0.6645. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1395. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3050] loss: 0.7224. Current perf: 0.7292. Best perf so far: 0.875
+[# API Calls 3100] loss: 0.6675. Current perf: 0.7917. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1062. Dev perf: 0.4792. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3150] loss: 0.6716. Current perf: 0.7708. Best perf so far: 0.875
+[# API Calls 3200] loss: 0.6592. Current perf: 0.7917. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0833. Dev perf: 0.5. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3250] loss: 0.653. Current perf: 0.7708. Best perf so far: 0.875
+[# API Calls 3300] loss: 0.6388. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0704. Dev perf: 0.4375. Best dev perf: 0.5208
+********* Done *********
+[# API Calls 3350] loss: 0.6302. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 3400] loss: 0.6391. Current perf: 0.7917. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0524. Dev perf: 0.5417. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3450] loss: 0.6257. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 3500] loss: 0.6444. Current perf: 0.8125. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0399. Dev perf: 0.4375. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3550] loss: 0.6161. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 3600] loss: 0.5934. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0581. Dev perf: 0.5208. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3650] loss: 0.575. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 3700] loss: 0.5685. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0737. Dev perf: 0.5. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3750] loss: 0.5661. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 3800] loss: 0.5549. Current perf: 0.8542. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1389. Dev perf: 0.4167. Best dev perf: 0.5417
+********* Done *********
+[# API Calls 3850] loss: 0.5476. Current perf: 0.8542. Best perf so far: 0.875
+[# API Calls 3900] loss: 0.6208. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1591. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 3950] loss: 0.5564. Current perf: 0.8125. Best perf so far: 0.8958
+[# API Calls 4000] loss: 0.5709. Current perf: 0.8125. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.0736. Dev perf: 0.5625. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4050] loss: 0.5502. Current perf: 0.8333. Best perf so far: 0.9167
+[# API Calls 4100] loss: 0.5494. Current perf: 0.8542. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.1006. Dev perf: 0.4375. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4150] loss: 0.5474. Current perf: 0.8333. Best perf so far: 0.9167
+[# API Calls 4200] loss: 0.5298. Current perf: 0.8542. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.078. Dev perf: 0.5208. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4250] loss: 0.5286. Current perf: 0.875. Best perf so far: 0.9167
+[# API Calls 4300] loss: 0.516. Current perf: 0.875. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.1154. Dev perf: 0.4583. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4350] loss: 0.5316. Current perf: 0.8333. Best perf so far: 0.9167
+[# API Calls 4400] loss: 0.5294. Current perf: 0.8542. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.1867. Dev perf: 0.3542. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4450] loss: 0.5396. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4500] loss: 0.5317. Current perf: 0.8958. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0847. Dev perf: 0.5. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4550] loss: 0.5065. Current perf: 0.9167. Best perf so far: 0.9375
+[# API Calls 4600] loss: 0.4874. Current perf: 0.9375. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0375. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4650] loss: 0.48. Current perf: 0.8958. Best perf so far: 0.9375
+[# API Calls 4700] loss: 0.4731. Current perf: 0.9167. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0012. Dev perf: 0.5417. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4750] loss: 0.455. Current perf: 0.8958. Best perf so far: 0.9375
+[# API Calls 4800] loss: 0.4415. Current perf: 0.8958. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.015. Dev perf: 0.5833. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4850] loss: 0.4742. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4900] loss: 0.4622. Current perf: 0.875. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1023. Dev perf: 0.4167. Best dev perf: 0.5833
+********* Done *********
+[# API Calls 4950] loss: 0.46. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 5000] loss: 0.4518. Current perf: 0.8958. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0338. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5050] loss: 0.4433. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 5100] loss: 0.4536. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0651. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5150] loss: 0.4393. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5200] loss: 0.4415. Current perf: 0.875. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0802. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5250] loss: 0.4358. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 5300] loss: 0.4157. Current perf: 0.875. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.134. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5350] loss: 0.4611. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 5400] loss: 0.4315. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2131. Dev perf: 0.3958. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5450] loss: 0.4535. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5500] loss: 0.4024. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1077. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5550] loss: 0.4098. Current perf: 0.875. Best perf so far: 0.9792
+[# API Calls 5600] loss: 0.3842. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0499. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5650] loss: 0.3721. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 5700] loss: 0.3652. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1294. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5750] loss: 0.3663. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 5800] loss: 0.3534. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1549. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5850] loss: 0.3692. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 5900] loss: 0.3453. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1033. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5950] loss: 0.3815. Current perf: 0.9167. Best perf so far: 0.9792
+[# API Calls 6000] loss: 0.3652. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1746. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6050] loss: 0.3716. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6100] loss: 0.3946. Current perf: 0.875. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.272. Dev perf: 0.375. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6150] loss: 0.3508. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6200] loss: 0.3512. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1256. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6250] loss: 0.3609. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6300] loss: 0.3653. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1181. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6350] loss: 0.348. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 6400] loss: 0.3692. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.086. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6450] loss: 0.3447. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6500] loss: 0.3462. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0588. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6550] loss: 0.3527. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 6600] loss: 0.3173. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.106. Dev perf: 0.5625. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6650] loss: 0.3232. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 6700] loss: 0.305. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1215. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6750] loss: 0.3374. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 6800] loss: 0.323. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.25. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6850] loss: 0.348. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 6900] loss: 0.3285. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.207. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6950] loss: 0.3131. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 7000] loss: 0.3327. Current perf: 0.9375. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 0.9851. Dev perf: 0.625. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7050] loss: 0.2945. Current perf: 0.9792. Best perf so far: 0.9792
+[# API Calls 7100] loss: 0.2819. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0308. Dev perf: 0.6042. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7150] loss: 0.2817. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7200] loss: 0.2833. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0422. Dev perf: 0.5417. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7250] loss: 0.3061. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7300] loss: 0.3003. Current perf: 0.9583. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0386. Dev perf: 0.5833. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7350] loss: 0.324. Current perf: 0.9375. Best perf so far: 0.9792
+[# API Calls 7400] loss: 0.3172. Current perf: 0.9167. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0385. Dev perf: 0.5833. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7450] loss: 0.3134. Current perf: 0.9792. Best perf so far: 0.9792
+[# API Calls 7500] loss: 0.2933. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.1328. Dev perf: 0.5625. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7550] loss: 0.2828. Current perf: 0.9792. Best perf so far: 0.9792
+[# API Calls 7600] loss: 0.2921. Current perf: 0.9792. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2608. Dev perf: 0.4792. Best dev perf: 0.625
+********* Done *********
+[# API Calls 7650] loss: 0.2742. Current perf: 0.9792. Best perf so far: 0.9792
+Done. Elapsed time: 39.586473540465036 (mins)
+===== seed: 50 finished! =====
+===== seed: 60 start! =====
+/data/qingyang/anaconda3/envs/bbt/lib/python3.8/site-packages/cma/s.py:13: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 103.80ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 3164.82ex/s]
+{'text1': 'A woman in a brownish-orange sweater is sitting by a lake.', 'text2': 'A woman is knitting a sweater by the lake.', 'labels': 2, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . A woman in a brownish-orange sweater is sitting by a lake. ? <mask> , A woman is knitting a sweater by the lake.", 'target_text': 'No'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 28.98ba/s]
+Using custom data configuration default
+Reusing dataset snli (/home/qingyang/.cache/huggingface/datasets/snli/default/0.0.0/73c7063d1d6ea6b34d71b18b0947826472535af1ea5ac5bdf0149db07367524f)
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 846.48ba/s]
+  0%|          | 0/48 [00:00<?, ?ex/s]100%|██████████| 48/48 [00:00<00:00, 5078.23ex/s]
+{'text1': 'A cheerleader performs a jump in front of a yellow and blue banner.', 'text2': 'A cheerleader is performing', 'labels': 0, 'input_text': "Xro target himself turn Europe worked energy scored * soon ball TV annual 2013 race International'd Market conferenceio o changesig officers inside form published phone co legal executive fightings hope summer officer football property@ book parents costsac manager create age email markets main . A cheerleader performs a jump in front of a yellow and blue banner. ? <mask> , A cheerleader is performing", 'target_text': 'Yes'}
+  0%|          | 0/1 [00:00<?, ?ba/s]100%|██████████| 1/1 [00:00<00:00, 33.66ba/s]
+Some weights of RobertaForMaskedLM were not initialized from the model checkpoint at roberta-large and are newly initialized: ['lm_head.decoder.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+# of train data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 68       | 3084   |
++------------------------+------------------------+----------+--------+
+
+# of dev data: 48
+Example:
++------------------------+------------------------+----------+--------+
+| input_ids              | attention_mask         | mask_pos | labels |
++------------------------+------------------------+----------+--------+
+| [0, 1000, 1001, 100... | [1, 1, 1, 1, 1, 1, ... | 68       | 9904   |
++------------------------+------------------------+----------+--------+
+[Embedding] mu: -0.018104109913110733 | std: 0.13582643866539001 [RandProj]  mu: 0.0 | std: 0.006074342999950358
+Calculating std for random projections...
+[Layer 1]
+ - Before clipping: mu=-0.0084, std=0.8496, min=-16.1027, max=17.5018
+ - After clipping (round 1): mu=-0.0067, std=0.7110, min=-2.5572, max=2.5404
+ - After clipping (round 2): mu=-0.0060, std=0.7039, min=-2.1398, max=2.1264
+ - After clipping (round 3): mu=-0.0060, std=0.7035, min=-2.1178, max=2.1058
+ - After clipping (round 4): mu=-0.0060, std=0.7034, min=-2.1164, max=2.1044
+ - After clipping (round 5): mu=-0.0060, std=0.7034, min=-2.1163, max=2.1043
+ - Random Projection: mu=0.0000, std=0.0315
+[Layer 2]
+ - Before clipping: mu=-0.0297, std=0.8792, min=-19.9470, max=15.9278
+ - After clipping (round 1): mu=-0.0193, std=0.6813, min=-2.6674, max=2.6079
+ - After clipping (round 2): mu=-0.0188, std=0.6695, min=-2.0633, max=2.0246
+ - After clipping (round 3): mu=-0.0188, std=0.6686, min=-2.0273, max=1.9897
+ - After clipping (round 4): mu=-0.0188, std=0.6685, min=-2.0245, max=1.9870
+ - After clipping (round 5): mu=-0.0188, std=0.6685, min=-2.0243, max=1.9867
+ - Random Projection: mu=0.0000, std=0.0299
+[Layer 3]
+ - Before clipping: mu=-0.0320, std=0.9154, min=-21.1022, max=14.5070
+ - After clipping (round 1): mu=-0.0186, std=0.6740, min=-2.7781, max=2.7140
+ - After clipping (round 2): mu=-0.0183, std=0.6598, min=-2.0406, max=2.0033
+ - After clipping (round 3): mu=-0.0183, std=0.6588, min=-1.9977, max=1.9612
+ - After clipping (round 4): mu=-0.0183, std=0.6587, min=-1.9945, max=1.9580
+ - After clipping (round 5): mu=-0.0183, std=0.6587, min=-1.9943, max=1.9577
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 4]
+ - Before clipping: mu=-0.0354, std=0.9236, min=-25.4500, max=11.2472
+ - After clipping (round 1): mu=-0.0199, std=0.6862, min=-2.8061, max=2.7353
+ - After clipping (round 2): mu=-0.0193, std=0.6732, min=-2.0784, max=2.0387
+ - After clipping (round 3): mu=-0.0193, std=0.6723, min=-2.0389, max=2.0003
+ - After clipping (round 4): mu=-0.0193, std=0.6722, min=-2.0360, max=1.9975
+ - After clipping (round 5): mu=-0.0193, std=0.6722, min=-2.0358, max=1.9973
+ - Random Projection: mu=0.0000, std=0.0301
+[Layer 5]
+ - Before clipping: mu=-0.0390, std=0.9435, min=-26.9725, max=8.3615
+ - After clipping (round 1): mu=-0.0210, std=0.6760, min=-2.8696, max=2.7916
+ - After clipping (round 2): mu=-0.0201, std=0.6614, min=-2.0492, max=2.0071
+ - After clipping (round 3): mu=-0.0201, std=0.6603, min=-2.0044, max=1.9641
+ - After clipping (round 4): mu=-0.0201, std=0.6602, min=-2.0010, max=1.9609
+ - After clipping (round 5): mu=-0.0201, std=0.6602, min=-2.0008, max=1.9606
+ - Random Projection: mu=0.0000, std=0.0295
+[Layer 6]
+ - Before clipping: mu=-0.0450, std=0.9613, min=-28.5274, max=6.9067
+ - After clipping (round 1): mu=-0.0259, std=0.6815, min=-2.9289, max=2.8388
+ - After clipping (round 2): mu=-0.0250, std=0.6647, min=-2.0705, max=2.0186
+ - After clipping (round 3): mu=-0.0249, std=0.6633, min=-2.0191, max=1.9691
+ - After clipping (round 4): mu=-0.0249, std=0.6631, min=-2.0147, max=1.9649
+ - After clipping (round 5): mu=-0.0249, std=0.6631, min=-2.0143, max=1.9645
+ - Random Projection: mu=0.0000, std=0.0297
+[Layer 7]
+ - Before clipping: mu=-0.0407, std=0.9767, min=-29.8723, max=7.3448
+ - After clipping (round 1): mu=-0.0199, std=0.6505, min=-2.9708, max=2.8894
+ - After clipping (round 2): mu=-0.0189, std=0.6292, min=-1.9714, max=1.9316
+ - After clipping (round 3): mu=-0.0188, std=0.6271, min=-1.9065, max=1.8687
+ - After clipping (round 4): mu=-0.0188, std=0.6269, min=-1.9002, max=1.8626
+ - After clipping (round 5): mu=-0.0188, std=0.6269, min=-1.8996, max=1.8620
+ - Random Projection: mu=0.0000, std=0.0280
+[Layer 8]
+ - Before clipping: mu=-0.0431, std=0.9944, min=-30.9577, max=6.5887
+ - After clipping (round 1): mu=-0.0213, std=0.6171, min=-3.0263, max=2.9400
+ - After clipping (round 2): mu=-0.0198, std=0.5903, min=-1.8726, max=1.8299
+ - After clipping (round 3): mu=-0.0196, std=0.5873, min=-1.7905, max=1.7510
+ - After clipping (round 4): mu=-0.0195, std=0.5869, min=-1.7814, max=1.7423
+ - After clipping (round 5): mu=-0.0195, std=0.5869, min=-1.7803, max=1.7413
+ - Random Projection: mu=0.0000, std=0.0262
+[Layer 9]
+ - Before clipping: mu=-0.0429, std=0.9882, min=-30.6825, max=6.3843
+ - After clipping (round 1): mu=-0.0213, std=0.5914, min=-3.0074, max=2.9217
+ - After clipping (round 2): mu=-0.0195, std=0.5621, min=-1.7954, max=1.7529
+ - After clipping (round 3): mu=-0.0192, std=0.5587, min=-1.7058, max=1.6669
+ - After clipping (round 4): mu=-0.0192, std=0.5583, min=-1.6953, max=1.6569
+ - After clipping (round 5): mu=-0.0192, std=0.5582, min=-1.6941, max=1.6556
+ - Random Projection: mu=0.0000, std=0.0250
+[Layer 10]
+ - Before clipping: mu=-0.0365, std=0.9941, min=-30.8095, max=7.2370
+ - After clipping (round 1): mu=-0.0143, std=0.5621, min=-3.0188, max=2.9459
+ - After clipping (round 2): mu=-0.0127, std=0.5303, min=-1.7007, max=1.6720
+ - After clipping (round 3): mu=-0.0124, std=0.5265, min=-1.6035, max=1.5781
+ - After clipping (round 4): mu=-0.0124, std=0.5260, min=-1.5919, max=1.5670
+ - After clipping (round 5): mu=-0.0124, std=0.5259, min=-1.5904, max=1.5656
+ - Random Projection: mu=0.0000, std=0.0235
+[Layer 11]
+ - Before clipping: mu=-0.0339, std=0.9528, min=-29.1506, max=6.6807
+ - After clipping (round 1): mu=-0.0128, std=0.5496, min=-2.8922, max=2.8245
+ - After clipping (round 2): mu=-0.0113, std=0.5198, min=-1.6615, max=1.6360
+ - After clipping (round 3): mu=-0.0111, std=0.5164, min=-1.5708, max=1.5482
+ - After clipping (round 4): mu=-0.0111, std=0.5159, min=-1.5602, max=1.5380
+ - After clipping (round 5): mu=-0.0111, std=0.5159, min=-1.5589, max=1.5367
+ - Random Projection: mu=0.0000, std=0.0231
+[Layer 12]
+ - Before clipping: mu=-0.0436, std=0.9696, min=-29.7997, max=6.6492
+ - After clipping (round 1): mu=-0.0223, std=0.5611, min=-2.9524, max=2.8653
+ - After clipping (round 2): mu=-0.0208, std=0.5311, min=-1.7056, max=1.6609
+ - After clipping (round 3): mu=-0.0206, std=0.5275, min=-1.6141, max=1.5725
+ - After clipping (round 4): mu=-0.0206, std=0.5271, min=-1.6032, max=1.5620
+ - After clipping (round 5): mu=-0.0206, std=0.5270, min=-1.6018, max=1.5606
+ - Random Projection: mu=0.0000, std=0.0236
+[Layer 13]
+ - Before clipping: mu=-0.0439, std=0.9759, min=-29.8306, max=5.9880
+ - After clipping (round 1): mu=-0.0230, std=0.5767, min=-2.9715, max=2.8837
+ - After clipping (round 2): mu=-0.0222, std=0.5517, min=-1.7533, max=1.7072
+ - After clipping (round 3): mu=-0.0220, std=0.5490, min=-1.6773, max=1.6330
+ - After clipping (round 4): mu=-0.0220, std=0.5487, min=-1.6691, max=1.6250
+ - After clipping (round 5): mu=-0.0220, std=0.5487, min=-1.6681, max=1.6241
+ - Random Projection: mu=0.0000, std=0.0245
+[Layer 14]
+ - Before clipping: mu=-0.0427, std=0.9818, min=-30.1489, max=5.4023
+ - After clipping (round 1): mu=-0.0218, std=0.5815, min=-2.9880, max=2.9026
+ - After clipping (round 2): mu=-0.0212, std=0.5594, min=-1.7663, max=1.7228
+ - After clipping (round 3): mu=-0.0211, std=0.5572, min=-1.6995, max=1.6570
+ - After clipping (round 4): mu=-0.0211, std=0.5570, min=-1.6927, max=1.6505
+ - After clipping (round 5): mu=-0.0211, std=0.5569, min=-1.6920, max=1.6498
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 15]
+ - Before clipping: mu=-0.0420, std=0.9938, min=-28.0772, max=5.8559
+ - After clipping (round 1): mu=-0.0159, std=0.5857, min=-3.0233, max=2.9393
+ - After clipping (round 2): mu=-0.0145, std=0.5615, min=-1.7730, max=1.7412
+ - After clipping (round 3): mu=-0.0145, std=0.5592, min=-1.6991, max=1.6700
+ - After clipping (round 4): mu=-0.0144, std=0.5589, min=-1.6919, max=1.6630
+ - After clipping (round 5): mu=-0.0144, std=0.5589, min=-1.6912, max=1.6623
+ - Random Projection: mu=0.0000, std=0.0250
+[Layer 16]
+ - Before clipping: mu=-0.0330, std=0.9990, min=-31.5351, max=6.0538
+ - After clipping (round 1): mu=-0.0045, std=0.5830, min=-3.0301, max=2.9642
+ - After clipping (round 2): mu=-0.0032, std=0.5588, min=-1.7534, max=1.7444
+ - After clipping (round 3): mu=-0.0031, std=0.5565, min=-1.6796, max=1.6732
+ - After clipping (round 4): mu=-0.0031, std=0.5562, min=-1.6726, max=1.6663
+ - After clipping (round 5): mu=-0.0031, std=0.5562, min=-1.6718, max=1.6656
+ - Random Projection: mu=0.0000, std=0.0249
+[Layer 17]
+ - Before clipping: mu=-0.0316, std=0.9754, min=-30.3690, max=5.9742
+ - After clipping (round 1): mu=-0.0038, std=0.5756, min=-2.9579, max=2.8948
+ - After clipping (round 2): mu=-0.0029, std=0.5526, min=-1.7307, max=1.7231
+ - After clipping (round 3): mu=-0.0029, std=0.5504, min=-1.6607, max=1.6549
+ - After clipping (round 4): mu=-0.0029, std=0.5502, min=-1.6542, max=1.6484
+ - After clipping (round 5): mu=-0.0029, std=0.5502, min=-1.6535, max=1.6478
+ - Random Projection: mu=0.0000, std=0.0246
+[Layer 18]
+ - Before clipping: mu=-0.0307, std=0.9735, min=-30.4387, max=5.5251
+ - After clipping (round 1): mu=-0.0036, std=0.5780, min=-2.9512, max=2.8898
+ - After clipping (round 2): mu=-0.0032, std=0.5547, min=-1.7377, max=1.7305
+ - After clipping (round 3): mu=-0.0032, std=0.5524, min=-1.6671, max=1.6608
+ - After clipping (round 4): mu=-0.0032, std=0.5522, min=-1.6605, max=1.6542
+ - After clipping (round 5): mu=-0.0032, std=0.5522, min=-1.6598, max=1.6535
+ - Random Projection: mu=0.0000, std=0.0247
+[Layer 19]
+ - Before clipping: mu=-0.0296, std=0.9607, min=-29.5039, max=5.2335
+ - After clipping (round 1): mu=-0.0035, std=0.5677, min=-2.9117, max=2.8524
+ - After clipping (round 2): mu=-0.0031, std=0.5436, min=-1.7065, max=1.6995
+ - After clipping (round 3): mu=-0.0031, std=0.5414, min=-1.6340, max=1.6277
+ - After clipping (round 4): mu=-0.0031, std=0.5411, min=-1.6272, max=1.6210
+ - After clipping (round 5): mu=-0.0031, std=0.5411, min=-1.6265, max=1.6203
+ - Random Projection: mu=0.0000, std=0.0242
+[Layer 20]
+ - Before clipping: mu=-0.0287, std=0.9455, min=-28.9151, max=5.0945
+ - After clipping (round 1): mu=-0.0037, std=0.5597, min=-2.8651, max=2.8077
+ - After clipping (round 2): mu=-0.0035, std=0.5353, min=-1.6827, max=1.6753
+ - After clipping (round 3): mu=-0.0035, std=0.5331, min=-1.6094, max=1.6025
+ - After clipping (round 4): mu=-0.0035, std=0.5329, min=-1.6027, max=1.5958
+ - After clipping (round 5): mu=-0.0035, std=0.5328, min=-1.6021, max=1.5951
+ - Random Projection: mu=0.0000, std=0.0238
+[Layer 21]
+ - Before clipping: mu=-0.0333, std=0.9890, min=-31.2374, max=5.1037
+ - After clipping (round 1): mu=-0.0073, std=0.5606, min=-3.0004, max=2.9339
+ - After clipping (round 2): mu=-0.0071, std=0.5336, min=-1.6892, max=1.6746
+ - After clipping (round 3): mu=-0.0071, std=0.5310, min=-1.6078, max=1.5936
+ - After clipping (round 4): mu=-0.0071, std=0.5308, min=-1.6002, max=1.5860
+ - After clipping (round 5): mu=-0.0071, std=0.5308, min=-1.5995, max=1.5853
+ - Random Projection: mu=0.0000, std=0.0237
+[Layer 22]
+ - Before clipping: mu=-0.0415, std=1.0061, min=-32.0818, max=4.9541
+ - After clipping (round 1): mu=-0.0151, std=0.5384, min=-3.0597, max=2.9768
+ - After clipping (round 2): mu=-0.0147, std=0.5102, min=-1.6302, max=1.6000
+ - After clipping (round 3): mu=-0.0147, std=0.5077, min=-1.5453, max=1.5160
+ - After clipping (round 4): mu=-0.0147, std=0.5074, min=-1.5377, max=1.5083
+ - After clipping (round 5): mu=-0.0147, std=0.5074, min=-1.5369, max=1.5075
+ - Random Projection: mu=0.0000, std=0.0227
+[Layer 23]
+ - Before clipping: mu=-0.0311, std=1.0087, min=-32.3887, max=5.3128
+ - After clipping (round 1): mu=-0.0053, std=0.5420, min=-3.0571, max=2.9950
+ - After clipping (round 2): mu=-0.0049, std=0.5143, min=-1.6314, max=1.6209
+ - After clipping (round 3): mu=-0.0050, std=0.5117, min=-1.5478, max=1.5380
+ - After clipping (round 4): mu=-0.0050, std=0.5114, min=-1.5401, max=1.5301
+ - After clipping (round 5): mu=-0.0050, std=0.5114, min=-1.5393, max=1.5293
+ - Random Projection: mu=0.0000, std=0.0229
+Random projections initialized.
+[# API Calls 50] loss: 1.5961. Current perf: 0.3333. Best perf so far: 0.375
+[# API Calls 100] loss: 1.5278. Current perf: 0.3125. Best perf so far: 0.375
+********* Evaluated on dev set *********
+Dev loss: 1.4749. Dev perf: 0.4375. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 150] loss: 1.4945. Current perf: 0.375. Best perf so far: 0.375
+[# API Calls 200] loss: 1.4297. Current perf: 0.3333. Best perf so far: 0.375
+********* Evaluated on dev set *********
+Dev loss: 1.4014. Dev perf: 0.4167. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 250] loss: 1.3655. Current perf: 0.375. Best perf so far: 0.3958
+[# API Calls 300] loss: 1.3208. Current perf: 0.3958. Best perf so far: 0.3958
+********* Evaluated on dev set *********
+Dev loss: 1.3066. Dev perf: 0.3958. Best dev perf: 0.4375
+********* Done *********
+[# API Calls 350] loss: 1.2568. Current perf: 0.375. Best perf so far: 0.3958
+[# API Calls 400] loss: 1.2321. Current perf: 0.375. Best perf so far: 0.3958
+********* Evaluated on dev set *********
+Dev loss: 1.2219. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 450] loss: 1.1783. Current perf: 0.3542. Best perf so far: 0.4167
+[# API Calls 500] loss: 1.1427. Current perf: 0.375. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.1763. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 550] loss: 1.1382. Current perf: 0.3958. Best perf so far: 0.4167
+[# API Calls 600] loss: 1.1297. Current perf: 0.3125. Best perf so far: 0.4167
+********* Evaluated on dev set *********
+Dev loss: 1.1395. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 650] loss: 1.1293. Current perf: 0.3958. Best perf so far: 0.4375
+[# API Calls 700] loss: 1.0959. Current perf: 0.375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.115. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 750] loss: 1.106. Current perf: 0.4375. Best perf so far: 0.4792
+[# API Calls 800] loss: 1.0984. Current perf: 0.4375. Best perf so far: 0.4792
+********* Evaluated on dev set *********
+Dev loss: 1.1593. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 850] loss: 1.0831. Current perf: 0.4167. Best perf so far: 0.5
+[# API Calls 900] loss: 1.0625. Current perf: 0.4583. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.1282. Dev perf: 0.375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 950] loss: 1.0524. Current perf: 0.4167. Best perf so far: 0.5417
+[# API Calls 1000] loss: 1.0493. Current perf: 0.4792. Best perf so far: 0.5417
+********* Evaluated on dev set *********
+Dev loss: 1.1094. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1050] loss: 1.0354. Current perf: 0.4583. Best perf so far: 0.5417
+[# API Calls 1100] loss: 1.0449. Current perf: 0.4583. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.0983. Dev perf: 0.375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1150] loss: 1.0347. Current perf: 0.5208. Best perf so far: 0.5625
+[# API Calls 1200] loss: 1.0207. Current perf: 0.4583. Best perf so far: 0.5625
+********* Evaluated on dev set *********
+Dev loss: 1.1027. Dev perf: 0.375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1250] loss: 1.0088. Current perf: 0.5625. Best perf so far: 0.6042
+[# API Calls 1300] loss: 0.9986. Current perf: 0.5417. Best perf so far: 0.625
+********* Evaluated on dev set *********
+Dev loss: 1.1052. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1350] loss: 0.977. Current perf: 0.6042. Best perf so far: 0.6458
+[# API Calls 1400] loss: 0.9867. Current perf: 0.5417. Best perf so far: 0.6458
+********* Evaluated on dev set *********
+Dev loss: 1.0924. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1450] loss: 0.9737. Current perf: 0.6458. Best perf so far: 0.6458
+[# API Calls 1500] loss: 0.9759. Current perf: 0.5417. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.0933. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1550] loss: 0.9686. Current perf: 0.625. Best perf so far: 0.6667
+[# API Calls 1600] loss: 0.9616. Current perf: 0.5. Best perf so far: 0.6667
+********* Evaluated on dev set *********
+Dev loss: 1.083. Dev perf: 0.3542. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1650] loss: 0.9279. Current perf: 0.625. Best perf so far: 0.6667
+[# API Calls 1700] loss: 0.9073. Current perf: 0.625. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.1204. Dev perf: 0.4375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1750] loss: 0.9288. Current perf: 0.5625. Best perf so far: 0.6875
+[# API Calls 1800] loss: 0.9245. Current perf: 0.5417. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.1495. Dev perf: 0.3125. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1850] loss: 0.9184. Current perf: 0.5208. Best perf so far: 0.6875
+[# API Calls 1900] loss: 0.8831. Current perf: 0.6667. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.1005. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 1950] loss: 0.9107. Current perf: 0.5833. Best perf so far: 0.6875
+[# API Calls 2000] loss: 0.8889. Current perf: 0.625. Best perf so far: 0.6875
+********* Evaluated on dev set *********
+Dev loss: 1.1213. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2050] loss: 0.8788. Current perf: 0.7083. Best perf so far: 0.7292
+[# API Calls 2100] loss: 0.8751. Current perf: 0.6458. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.0883. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2150] loss: 0.8697. Current perf: 0.6458. Best perf so far: 0.7292
+[# API Calls 2200] loss: 0.8621. Current perf: 0.6042. Best perf so far: 0.7292
+********* Evaluated on dev set *********
+Dev loss: 1.1087. Dev perf: 0.3125. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2250] loss: 0.8417. Current perf: 0.7292. Best perf so far: 0.75
+[# API Calls 2300] loss: 0.8408. Current perf: 0.6875. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.1056. Dev perf: 0.4792. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2350] loss: 0.7827. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 2400] loss: 0.7806. Current perf: 0.7292. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.1507. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2450] loss: 0.7995. Current perf: 0.6667. Best perf so far: 0.7917
+[# API Calls 2500] loss: 0.9007. Current perf: 0.5625. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.1762. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2550] loss: 0.8132. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 2600] loss: 0.8366. Current perf: 0.6458. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.1911. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2650] loss: 0.7957. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 2700] loss: 0.795. Current perf: 0.75. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0745. Dev perf: 0.4583. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2750] loss: 0.8175. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 2800] loss: 0.86. Current perf: 0.5417. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.1352. Dev perf: 0.4375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2850] loss: 0.7842. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 2900] loss: 0.7886. Current perf: 0.7083. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0756. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 2950] loss: 0.7753. Current perf: 0.75. Best perf so far: 0.7917
+[# API Calls 3000] loss: 0.7653. Current perf: 0.6875. Best perf so far: 0.7917
+********* Evaluated on dev set *********
+Dev loss: 1.0348. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3050] loss: 0.7624. Current perf: 0.6875. Best perf so far: 0.7917
+[# API Calls 3100] loss: 0.7264. Current perf: 0.75. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.0505. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3150] loss: 0.7404. Current perf: 0.75. Best perf so far: 0.8125
+[# API Calls 3200] loss: 0.7738. Current perf: 0.6667. Best perf so far: 0.8125
+********* Evaluated on dev set *********
+Dev loss: 1.1066. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3250] loss: 0.7244. Current perf: 0.7292. Best perf so far: 0.8125
+[# API Calls 3300] loss: 0.7466. Current perf: 0.6667. Best perf so far: 0.8333
+********* Evaluated on dev set *********
+Dev loss: 1.1447. Dev perf: 0.3958. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3350] loss: 0.6937. Current perf: 0.8125. Best perf so far: 0.8542
+[# API Calls 3400] loss: 0.7067. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0554. Dev perf: 0.4167. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3450] loss: 0.707. Current perf: 0.7917. Best perf so far: 0.875
+[# API Calls 3500] loss: 0.7058. Current perf: 0.75. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0523. Dev perf: 0.5. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3550] loss: 0.6557. Current perf: 0.7708. Best perf so far: 0.875
+[# API Calls 3600] loss: 0.6865. Current perf: 0.7083. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.1008. Dev perf: 0.375. Best dev perf: 0.5
+********* Done *********
+[# API Calls 3650] loss: 0.6981. Current perf: 0.7083. Best perf so far: 0.875
+[# API Calls 3700] loss: 0.6784. Current perf: 0.7708. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0016. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 3750] loss: 0.7058. Current perf: 0.6667. Best perf so far: 0.875
+[# API Calls 3800] loss: 0.6225. Current perf: 0.8333. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0205. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 3850] loss: 0.6232. Current perf: 0.8125. Best perf so far: 0.875
+[# API Calls 3900] loss: 0.6242. Current perf: 0.8542. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.086. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 3950] loss: 0.6828. Current perf: 0.6458. Best perf so far: 0.875
+[# API Calls 4000] loss: 0.6506. Current perf: 0.7292. Best perf so far: 0.875
+********* Evaluated on dev set *********
+Dev loss: 1.0805. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4050] loss: 0.6307. Current perf: 0.7917. Best perf so far: 0.8958
+[# API Calls 4100] loss: 0.5857. Current perf: 0.8333. Best perf so far: 0.9167
+********* Evaluated on dev set *********
+Dev loss: 1.075. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4150] loss: 0.5747. Current perf: 0.8542. Best perf so far: 0.9167
+[# API Calls 4200] loss: 0.5743. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.077. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4250] loss: 0.5792. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4300] loss: 0.5721. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0513. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4350] loss: 0.5994. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 4400] loss: 0.6229. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0585. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4450] loss: 0.5872. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4500] loss: 0.6359. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1304. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4550] loss: 0.5542. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 4600] loss: 0.5271. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0852. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4650] loss: 0.5408. Current perf: 0.7917. Best perf so far: 0.9375
+[# API Calls 4700] loss: 0.5291. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0951. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4750] loss: 0.5199. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 4800] loss: 0.5005. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1069. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4850] loss: 0.5147. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 4900] loss: 0.5278. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0588. Dev perf: 0.4167. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 4950] loss: 0.5648. Current perf: 0.8125. Best perf so far: 0.9375
+[# API Calls 5000] loss: 0.5759. Current perf: 0.75. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1401. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5050] loss: 0.5659. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 5100] loss: 0.5838. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0145. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5150] loss: 0.5766. Current perf: 0.75. Best perf so far: 0.9375
+[# API Calls 5200] loss: 0.5691. Current perf: 0.7917. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0167. Dev perf: 0.4375. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5250] loss: 0.5544. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 5300] loss: 0.5432. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 0.9991. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5350] loss: 0.5596. Current perf: 0.8125. Best perf so far: 0.9375
+[# API Calls 5400] loss: 0.5499. Current perf: 0.8333. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0271. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5450] loss: 0.5496. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 5500] loss: 0.535. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0021. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5550] loss: 0.5144. Current perf: 0.8542. Best perf so far: 0.9375
+[# API Calls 5600] loss: 0.5797. Current perf: 0.7917. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0167. Dev perf: 0.6042. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5650] loss: 0.5865. Current perf: 0.7708. Best perf so far: 0.9375
+[# API Calls 5700] loss: 0.5407. Current perf: 0.8125. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0433. Dev perf: 0.5417. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5750] loss: 0.4884. Current perf: 0.875. Best perf so far: 0.9375
+[# API Calls 5800] loss: 0.5042. Current perf: 0.8542. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0183. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5850] loss: 0.5105. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 5900] loss: 0.585. Current perf: 0.8125. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0877. Dev perf: 0.4167. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 5950] loss: 0.4791. Current perf: 0.8958. Best perf so far: 0.9375
+[# API Calls 6000] loss: 0.484. Current perf: 0.7917. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.0709. Dev perf: 0.4167. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6050] loss: 0.4632. Current perf: 0.8333. Best perf so far: 0.9375
+[# API Calls 6100] loss: 0.5745. Current perf: 0.8125. Best perf so far: 0.9375
+********* Evaluated on dev set *********
+Dev loss: 1.1113. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6150] loss: 0.4368. Current perf: 0.9375. Best perf so far: 0.9583
+[# API Calls 6200] loss: 0.43. Current perf: 0.9583. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.075. Dev perf: 0.3958. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6250] loss: 0.4255. Current perf: 0.9375. Best perf so far: 0.9583
+[# API Calls 6300] loss: 0.4517. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0122. Dev perf: 0.4583. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6350] loss: 0.4076. Current perf: 0.8958. Best perf so far: 0.9583
+[# API Calls 6400] loss: 0.4636. Current perf: 0.875. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.1064. Dev perf: 0.3333. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6450] loss: 0.4905. Current perf: 0.9167. Best perf so far: 0.9583
+[# API Calls 6500] loss: 0.4502. Current perf: 0.8542. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0651. Dev perf: 0.4375. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6550] loss: 0.428. Current perf: 0.8958. Best perf so far: 0.9583
+[# API Calls 6600] loss: 0.4162. Current perf: 0.9167. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0178. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6650] loss: 0.3964. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 6700] loss: 0.3878. Current perf: 0.8958. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 0.9976. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6750] loss: 0.4602. Current perf: 0.8333. Best perf so far: 0.9583
+[# API Calls 6800] loss: 0.4109. Current perf: 0.8542. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0161. Dev perf: 0.5. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6850] loss: 0.3979. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 6900] loss: 0.4408. Current perf: 0.8333. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0555. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 6950] loss: 0.4104. Current perf: 0.9167. Best perf so far: 0.9583
+[# API Calls 7000] loss: 0.4545. Current perf: 0.875. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.04. Dev perf: 0.5833. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7050] loss: 0.4393. Current perf: 0.875. Best perf so far: 0.9583
+[# API Calls 7100] loss: 0.5296. Current perf: 0.7917. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.1628. Dev perf: 0.4167. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7150] loss: 0.3986. Current perf: 0.8958. Best perf so far: 0.9583
+[# API Calls 7200] loss: 0.3999. Current perf: 0.9375. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0244. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7250] loss: 0.4051. Current perf: 0.9375. Best perf so far: 0.9583
+[# API Calls 7300] loss: 0.4189. Current perf: 0.8958. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0125. Dev perf: 0.4792. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7350] loss: 0.6141. Current perf: 0.7292. Best perf so far: 0.9583
+[# API Calls 7400] loss: 0.42. Current perf: 0.8542. Best perf so far: 0.9583
+********* Evaluated on dev set *********
+Dev loss: 1.0183. Dev perf: 0.5208. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7450] loss: 0.3915. Current perf: 0.9583. Best perf so far: 0.9792
+[# API Calls 7500] loss: 0.3906. Current perf: 0.8958. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.0629. Dev perf: 0.4375. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7550] loss: 0.3961. Current perf: 0.8958. Best perf so far: 0.9792
+[# API Calls 7600] loss: 0.4083. Current perf: 0.8542. Best perf so far: 0.9792
+********* Evaluated on dev set *********
+Dev loss: 1.2659. Dev perf: 0.3542. Best dev perf: 0.6042
+********* Done *********
+[# API Calls 7650] loss: 0.3318. Current perf: 0.9167. Best perf so far: 0.9792
+Done. Elapsed time: 45.1151384751002 (mins)
+===== seed: 60 finished! =====
+===== task: snli finished! =====

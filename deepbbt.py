@@ -137,6 +137,8 @@ elif task_name in ['thucnews']:
     num_labels = 10
 elif task_name in ['dbpedia', 'tnews']:
     num_labels = 14
+elif task_name in ['trec']:
+    num_labels = 6
 else:
     raise ValueError
 
@@ -308,6 +310,10 @@ class LMForwardAPI:
             self.metric = SNLIMetric(target='labels', pred='logits', tokenizer=tokenizer)
             self.metric_key = 'acc'
             self.metric_name = 'SNLIMetric'
+        elif task_name == 'trec':
+            self.metric = TRECMetric(target='labels', pred='logits', tokenizer=tokenizer)
+            self.metric_key = 'acc'
+            self.metric_name = 'TRECMetric'
         # elif task_name == 'chnsent':
         #     self.metric = ChnSentMetric(target='labels', pred='logits', tokenizer=tokenizer)
         #     self.metric_key = 'acc'
@@ -731,4 +737,5 @@ if not os.path.exists(f'./results/{task_name}/{seed}'):
     os.makedirs(f'./results/{task_name}/{seed}')
 
 
-torch.save(model_forward_api.linear(torch.tensor(model_forward_api.best, dtype=torch.float32)), f=f'./results/{task_name}/{seed}/best.pt')
+torch.save(model_forward_api.best, f=f'./results/{task_name}/{seed}/best.pt')
+# torch.save(model_forward_api.best, f=f'./{task_name}_{seed}.pt')
