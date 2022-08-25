@@ -53,7 +53,7 @@ parser.add_argument("--sigma1", default=1, type=float)
 parser.add_argument("--sigma2", default=0.2, type=float)
 parser.add_argument("--print_every", default=50, type=int)
 parser.add_argument("--eval_every", default=100, type=int)
-parser.add_argument("--device", default='cuda:7', type=str)
+parser.add_argument("--device", default='cuda:2', type=str)
 parser.add_argument("--alg", default='CMA', type=str)
 parser.add_argument("--random_proj", default='normal', type=str)
 parser.add_argument("--seed", default=42, type=int)
@@ -240,9 +240,10 @@ class LMForwardAPI:
 
         if inference_framework == 'ort':
             self.model.roberta = None
-        self.best_prefix = torch.zeros(self.config.num_hidden_layers, n_prompt_tokens, self.config.hidden_size,
-                                       device=device)
-        self.best = None
+        # self.best_prefix = torch.zeros(self.config.num_hidden_layers, n_prompt_tokens, self.config.hidden_size,
+        #                                device=device)
+        self.best_prefix = torch.load(f'./results/{task_name}/{seed}/best.pt').to(device)
+        self.best = torch.load(f'./results/{task_name}/{seed}/best.pt').to(device)
         self.init_prompt = None
         self.model.to(device)
         self.model.eval()
@@ -444,8 +445,9 @@ class LMForwardAPI:
                             hid_path = './hidstates/{}'.format(self.model_name.split('/')[-1])
                             if not os.path.exists(hid_path):
                                 os.makedirs(hid_path, exist_ok=True)
-                            with open('{}/hidden_{}.bin'.format(hid_path, i + 1), 'wb') as f:
-                                pickle.dump(h, f)
+                            with open('{}/hidden_{}.bin'.format(hid_path, i + 1), 'rb') as f:
+                                # pickle.dump(h, f)
+                                h = pickle.load(f)
                         print('[Layer {}]'.format(i + 1))
                         hidden = h.clone().reshape(-1).detach().cpu().numpy()
                         mu_hat = np.mean(hidden)
@@ -653,45 +655,45 @@ print('\n# of test data: {}'.format(len(dev_data)))
 print('Example:')
 print(test_data[0])
 
-if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
-    train_data = {
-        'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
-        'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
-        'decoder_input_ids': torch.tensor(train_data['decoder_input_ids'].get(list(range(len(train_data))))),
-        'decoder_attention_mask': torch.tensor(train_data['decoder_attention_mask'].get(list(range(len(train_data))))),
-        'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
-    }
-    dev_data = {
-        'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
-        'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
-        'decoder_input_ids': torch.tensor(dev_data['decoder_input_ids'].get(list(range(len(dev_data))))),
-        'decoder_attention_mask': torch.tensor(dev_data['decoder_attention_mask'].get(list(range(len(dev_data))))),
-        'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
-    }
-elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
-    train_data = {
-        'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
-        'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
-        'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
-    }
-    dev_data = {
-        'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
-        'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
-        'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
-    }
-else:
-    train_data = {
-        'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
-        'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
-        'mask_pos': torch.tensor(train_data['mask_pos'].get(list(range(len(train_data))))),
-        'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
-    }
-    dev_data = {
-        'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
-        'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
-        'mask_pos': torch.tensor(dev_data['mask_pos'].get(list(range(len(dev_data))))),
-        'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
-    }
+# if model_name in ['t5-small', 't5-base', 't5-large', 't5-3b']:
+#     train_data = {
+#         'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
+#         'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
+#         'decoder_input_ids': torch.tensor(train_data['decoder_input_ids'].get(list(range(len(train_data))))),
+#         'decoder_attention_mask': torch.tensor(train_data['decoder_attention_mask'].get(list(range(len(train_data))))),
+#         'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
+#     }
+#     dev_data = {
+#         'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
+#         'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
+#         'decoder_input_ids': torch.tensor(dev_data['decoder_input_ids'].get(list(range(len(dev_data))))),
+#         'decoder_attention_mask': torch.tensor(dev_data['decoder_attention_mask'].get(list(range(len(dev_data))))),
+#         'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
+#     }
+# elif model_name in ['gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl']:
+#     train_data = {
+#         'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
+#         'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
+#         'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
+#     }
+#     dev_data = {
+#         'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
+#         'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
+#         'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
+#     }
+# else:
+#     train_data = {
+#         'input_ids': torch.tensor(train_data['input_ids'].get(list(range(len(train_data))))),
+#         'attention_mask': torch.tensor(train_data['attention_mask'].get(list(range(len(train_data))))),
+#         'mask_pos': torch.tensor(train_data['mask_pos'].get(list(range(len(train_data))))),
+#         'labels': torch.tensor(train_data['labels'].get(list(range(len(train_data))))),
+#     }
+#     dev_data = {
+#         'input_ids': torch.tensor(dev_data['input_ids'].get(list(range(len(dev_data))))),
+#         'attention_mask': torch.tensor(dev_data['attention_mask'].get(list(range(len(dev_data))))),
+#         'mask_pos': torch.tensor(dev_data['mask_pos'].get(list(range(len(dev_data))))),
+#         'labels': torch.tensor(dev_data['labels'].get(list(range(len(dev_data))))),
+#     }
 
 model_forward_api = LMForwardAPI(
     model_name=model_name,
@@ -721,19 +723,19 @@ es_list = [
 ]
 start_time = time.time()
 
-for _ in range(budget // (int(popsize) * model_forward_api.config.num_hidden_layers)):
-    for i, es in enumerate(es_list):
-        solutions = es.ask()
-        fitnesses = [model_forward_api.eval(x, i) for x in solutions]
-        es.tell(solutions, fitnesses)
-        model_forward_api.best_prefix[i] = model_forward_api.linear[i](
-            torch.tensor(es.result.xbest).type(torch.float32)).reshape(-1,
-                                                                       model_forward_api.config.hidden_size)  # set best cv
+# for _ in range(budget // (int(popsize) * model_forward_api.config.num_hidden_layers)):
+#     for i, es in enumerate(es_list):
+#         solutions = es.ask()
+#         fitnesses = [model_forward_api.eval(x, i) for x in solutions]
+#         es.tell(solutions, fitnesses)
+#         model_forward_api.best_prefix[i] = model_forward_api.linear[i](
+#             torch.tensor(es.result.xbest).type(torch.float32)).reshape(-1,
+#                                                                        model_forward_api.config.hidden_size)  # set best cv
 
 end_time = time.time()
 print('Done. Elapsed time: {} (mins)'.format((end_time - start_time) / 60))
 # print('Evaluate on test data...')
-test_acc = model_forward_api.eval(test_data=test_data)
+test_acc = model_forward_api.eval(test_data=dev_data)
 print('Test acc: {}'.format(round(test_acc, 4)))
 # fitlog.finish()
 # if not os.path.exists(f'./results/{task_name}/{seed}'):
