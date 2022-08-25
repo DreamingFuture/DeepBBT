@@ -1,7 +1,7 @@
 import os
 
 seeds = [8, 13, 42, 50, 60]
-task_list = ['sst2', 'mrpc', 'agnews']
+task_list = ['sst2', 'mrpc', 'agnews', 'trec', 'yelpp', 'snli']
 task_name_dict = {
     'sst2': 'SST-2',
     'agnews': 'AGNews',
@@ -53,14 +53,14 @@ for task_name in task_list:
                                 f.write(content)                      
                             content = fr.readline()
                 
-                path = os.path.join('./datasets', task_name_dict[task_name], str(index), 'dev.tsv')
-                with open(path, 'r', encoding='utf-8') as fr:
-                    content = fr.readline()
-                    while content:
-                        if content.split('\t')[0] not in res:
-                            res.append(content.split('\t')[0])
-                            f.write(content)                      
+                    path = os.path.join('./datasets', task_name_dict[task_name], str(index), 'dev.tsv')
+                    with open(path, 'r', encoding='utf-8') as fr:
                         content = fr.readline()
+                        while content:
+                            if content.split('\t')[0] not in res:
+                                res.append(content.split('\t')[0])
+                                f.write(content)                      
+                            content = fr.readline()
 
 for task_name in task_list:
     for seed in seeds:
