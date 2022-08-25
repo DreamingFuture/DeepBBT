@@ -15,7 +15,7 @@ class Yelp(datasets.GeneratorBasedBuilder):
     def _split_generators(self, dl_manager):
         return [
             datasets.SplitGenerator(name=datasets.Split(f'{split}_{seed}'), gen_kwargs={"filepath": f'./datasets/Yelp/{seed}/{split}.tsv'})
-            for seed in [8, 13, 42, 50, 60] for split in ['train', 'dev']
+            for seed in [8, 13, 42, 50, 60] for split in ['train', 'dev', 'test']
         ]
 
     def _generate_examples(self, filepath):
