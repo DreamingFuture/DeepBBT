@@ -1,3 +1,11 @@
+# 版本介绍
+- deepbbt baseline版本（仓库中还有bbt的文件，不用管）
+- test_deepbbt.py 获得需提交的测试结果的文件，输出放在predictions中
+- test_deep_own.py 自己测试的文件，目前只有指标，没存结果
+- score：0.764
+
+
+
 # Baseline
 
 ## Prepare your environment
