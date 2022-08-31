@@ -39,19 +39,6 @@ model = RobertaModel.from_pretrained('roberta-large').to(device).eval()
 pre_str = tokenizer.decode(list(range(1000, 1050))) + ' . '
 middle_str = '? <mask> .'
 
-if task_name in ['sst2', 'yelpp']:
-    middle_str = "It is <mask>."       
-elif task_name in ['mrpc']:
-    middle_str = '? <mask> .'
-elif task_name in ['trec']:
-    middle_str = 'The kind of news is <mask> .'
-elif task_name in ['snli']:
-    middle_str = '<mask> , '
-elif task_name in ['agnews']:
-    middle_str = 'The kind of news is <mask> .'
-else:
-    raise ValueError
-
 for seed in [8, 13, 42, 50, 60]:
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -66,10 +53,14 @@ for seed in [8, 13, 42, 50, 60]:
         test_data is actually a <dummy_token>. It is then replaced by real data in the wrapped API.
         For other 4 tasks, test_data must be used only once, e.g. pre_str + test_data + post_str
         """
-        if task_name in ['mrpc', 'snli']:
-            return pre_str + test_data + middle_str + test_data
-        else:
-            return pre_str + test_data + middle_str
+        if task_name in ['sst2', 'yelpp']:
+            return pre_str + test_data + ' . It was <mask> .'
+        elif task_name == 'trec':
+            return pre_str + '<mask> question: ' + test_data + ' '
+        elif task_name == 'agnews':
+            return pre_str + '<mask> News: ' + test_data
+        elif task_name in ['mrpc','snli']:
+            return pre_str + test_data + ' ? <mask> , ' + test_data
 
 
     def embedding_and_attention_mask_fn(embedding, attention_mask):
