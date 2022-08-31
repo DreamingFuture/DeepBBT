@@ -41,7 +41,7 @@ parser.add_argument("--model_name", default='roberta-large',
                              'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl',
                              'fnlp/cpt-large',
                              ], type=str)
-parser.add_argument("--task_name", default='sst2', type=str)
+parser.add_argument("--task_name", default='trec', type=str)
 parser.add_argument("--n_prompt_tokens", default=50, type=int)
 parser.add_argument("--intrinsic_dim", default=500, type=int)
 parser.add_argument("--k_shot", default=16, type=int)
@@ -651,7 +651,7 @@ print(train_data[0])
 print('\n# of dev data: {}'.format(len(dev_data)))
 print('Example:')
 print(dev_data[0])
-print('\n# of test data: {}'.format(len(dev_data)))
+print('\n# of test data: {}'.format(len(test_data)))
 print('Example:')
 print(test_data[0])
 
@@ -735,7 +735,7 @@ start_time = time.time()
 end_time = time.time()
 print('Done. Elapsed time: {} (mins)'.format((end_time - start_time) / 60))
 # print('Evaluate on test data...')
-test_acc = model_forward_api.eval(test_data=dev_data)
+test_acc = model_forward_api.eval(test_data=test_data)
 print('Test acc: {}'.format(round(test_acc, 4)))
 # fitlog.finish()
 # if not os.path.exists(f'./results/{task_name}/{seed}'):
